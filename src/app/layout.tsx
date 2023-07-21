@@ -1,4 +1,4 @@
-import '../styles/global.css'
+import '../styles/panda.css'
 
 import { seoConfig } from 'seo.config'
 
