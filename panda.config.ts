@@ -1,5 +1,6 @@
 import { defineConfig } from '@pandacss/dev'
 
+import { globalCss } from '@/theme/global-css'
 import { semanticTokens } from '@/theme/semantic-tokens'
 import { tokens } from '@/theme/tokens'
 
@@ -26,4 +27,6 @@ export default defineConfig({
 
   // The JSX framework to use
   jsxFramework: 'react',
+
+  globalCss,
 })

@@ -4,8 +4,8 @@ import { colors } from './colors'
 
 export const tokens = defineTokens({
   fonts: {
-    sans: { value: '"Inter", sans-serif' },
-    mono: { value: '"Fira Code", monospace' },
+    sans: { value: 'var(--font-inter), sans-serif' },
+    mono: { value: 'var(--font-fira-code), monospace' },
   },
   colors,
 })
