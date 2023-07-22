@@ -6,10 +6,10 @@ export const globalCss = defineGlobalStyles({
   },
 
   body: {
-    bg: 'background',
+    background: 'background',
 
-    w: '100vw',
-    h: '100vh',
+    width: '100vw',
+    height: '100vh',
 
     color: 'text',
   },
