@@ -7,5 +7,6 @@ export const tokens = defineTokens({
     sans: { value: 'var(--font-inter), sans-serif' },
     mono: { value: 'var(--font-fira-code), monospace' },
   },
+
   colors,
 })

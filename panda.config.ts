@@ -29,4 +29,9 @@ export default defineConfig({
   jsxFramework: 'react',
 
   globalCss,
+
+  gitignore: true,
+
+  // minify: true,
+  // hash: true,
 })
