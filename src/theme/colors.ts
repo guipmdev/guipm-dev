@@ -22,7 +22,25 @@ function createColorTokens(
   }, {})
 }
 
+function createTransparentColor(radixColor: string, transparency: number) {
+  const colorWithoutCommas = radixColor.replaceAll(',', '')
+
+  const transparencyLevel = ` / ${transparency / 100})`
+
+  return colorWithoutCommas.replace(')', transparencyLevel)
+}
+
 export const colors = defineTokens.colors({
   slateDark: createColorTokens(slateDark),
   skyDark: createColorTokens(skyDark),
+
+  slateDarkA: {
+    'slateA10/0': { value: createTransparentColor(slateDark.slate10, 0) },
+    'slateA4/50': { value: createTransparentColor(slateDark.slate4, 50) },
+    'slateA12/30': { value: createTransparentColor(slateDark.slate12, 30) },
+    'slateA12/10': { value: createTransparentColor(slateDark.slate12, 10) },
+    'slateA2/50': { value: createTransparentColor(slateDark.slate2, 50) },
+    'slateA1/50': { value: createTransparentColor(slateDark.slate1, 50) },
+    'slateA12/5': { value: createTransparentColor(slateDark.slate12, 5) },
+  },
 })
