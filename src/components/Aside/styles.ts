@@ -8,6 +8,10 @@ export const AsideContainer = styled('aside', {
       base: '2rem',
       lg: '4rem',
     },
+    gridArea: {
+      base: 'auto',
+      lg: 'a',
+    },
 
     width: '100%',
   },
