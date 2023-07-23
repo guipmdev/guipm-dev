@@ -8,29 +8,50 @@ export const AsideContainer = styled('aside', {
 
 export const Bio = styled('div', {
   base: {
-    marginBottom: '4rem',
+    marginBottom: {
+      base: '2rem',
+      lg: '4rem',
+    },
 
     '& .logo': {
       display: 'flex',
       alignItems: 'center',
       gap: '1rem',
 
-      marginBottom: '1rem',
+      margin: '0 auto 1rem',
+      width: 'fit-content',
 
       color: 'title',
 
+      sm: {
+        margin: '0 0 1rem',
+        width: '100%',
+      },
+
       '& img': {
-        minWidth: 'fit-content',
+        width: '2.8125rem',
+        height: '2.8125rem',
+
+        sm: {
+          width: '4.0625rem',
+          height: '4.0625rem',
+        },
       },
 
       '& h1': {
-        textStyle: '5xl',
+        textStyle: {
+          base: '3xl',
+          sm: '5xl',
+        },
         fontWeight: 'black',
       },
 
       '& pre': {
         fontFamily: 'mono',
-        textStyle: 'xl',
+        textStyle: {
+          base: 'sm',
+          sm: 'xl',
+        },
         fontWeight: 'medium',
 
         '& span': {
@@ -43,7 +64,17 @@ export const Bio = styled('div', {
 
 export const Navbar = styled('nav', {
   base: {
-    marginBottom: '4rem',
+    visibility: 'hidden',
+
+    maxHeight: 0,
+
+    lg: {
+      visibility: 'visible',
+
+      maxHeight: 'fit-content',
+
+      marginBottom: '4rem',
+    },
 
     '& a': {
       display: 'flex',
@@ -53,11 +84,6 @@ export const Navbar = styled('nav', {
       textStyle: 'xs',
       fontWeight: 'bold',
 
-      _motionReduce: {
-        '&, & span': {
-          transition: 'none',
-        },
-      },
       _motionSafe: {
         '&, & span': {
           transition: 'color 0.2s, width 0.2s, background-color 0.2s',
@@ -91,28 +117,23 @@ export const Navbar = styled('nav', {
 export const SocialLinks = styled('ul', {
   base: {
     display: 'flex',
+    justifyContent: {
+      base: 'center',
+      sm: 'flex-start',
+    },
     gap: '1.5rem',
 
-    '& li': {
-      '& a': {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+    '& li a': {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
 
-        _motionReduce: {
-          '&, & span': {
-            transition: 'none',
-          },
-        },
-        _motionSafe: {
-          '&, & span': {
-            transition: 'color 0.2s',
-          },
-        },
+      _motionSafe: {
+        transition: 'color 0.2s',
+      },
 
-        _hover: {
-          color: 'title',
-        },
+      _hover: {
+        color: 'title',
       },
     },
   },
