@@ -1,5 +1,5 @@
 import { styled } from '@/styled-system/jsx'
 
-export const HomeContainer = styled('div', {
+export const AsideContainer = styled('aside', {
   base: {},
 })
