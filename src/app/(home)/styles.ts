@@ -8,7 +8,8 @@ export const HomeContainer = styled('div', {
       lg: `"a b" auto
            "c c" auto / minmax(420px, 38%) 1fr`,
     },
-    gap: '2rem',
+    rowGap: '1rem',
+    columnGap: '2rem',
 
     '& main': {
       display: 'flex',
@@ -32,6 +33,8 @@ export const HomeContainer = styled('div', {
 
       '& p:first-child': {
         textStyle: 'sm',
+
+        marginBottom: '0.5rem',
       },
 
       '& p:last-child': {
