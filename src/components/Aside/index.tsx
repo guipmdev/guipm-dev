@@ -8,14 +8,14 @@ import Link from 'next/link'
 
 import guipmdevLogo from '@/assets/guipmdev-logo.svg'
 
-import { AsideContainer } from './styles'
+import { AsideContainer, Bio, Navbar, SocialLinks } from './styles'
 
 export function Aside() {
   return (
     <AsideContainer>
-      <div>
-        <div>
-          <Image src={guipmdevLogo} width="65" height="65" alt="" />
+      <Bio>
+        <div className="logo">
+          <Image src={guipmdevLogo} alt="" />
 
           <div>
             <h1>GUIPM.DEV</h1>
@@ -29,35 +29,41 @@ export function Aside() {
           👋 Olá! Meu nome é Guilherme, um desenvolvedor apaixonado por explorar
           o universo dos códigos e encarar desafios.
         </p>
-      </div>
+      </Bio>
 
-      <nav>
-        <Link href="">
+      <Navbar>
+        <Link href="/" className="active">
           <span></span> SOBRE
         </Link>
 
-        <Link href="">
+        <Link href="/">
           <span></span> EXPERIÊNCIA
         </Link>
 
-        <Link href="">
+        <Link href="/">
           <span></span> PROJETOS
         </Link>
-      </nav>
+      </Navbar>
 
-      <ul>
-        <Link href="">
-          <GitHubLogoIcon />
-        </Link>
+      <SocialLinks>
+        <li>
+          <Link href="/">
+            <GitHubLogoIcon width={24} height={24} />
+          </Link>
+        </li>
 
-        <Link href="">
-          <LinkedInLogoIcon />
-        </Link>
+        <li>
+          <Link href="/">
+            <LinkedInLogoIcon width={24} height={24} />
+          </Link>
+        </li>
 
-        <Link href="">
-          <EnvelopeClosedIcon />
-        </Link>
-      </ul>
+        <li>
+          <Link href="/">
+            <EnvelopeClosedIcon width={24} height={24} />
+          </Link>
+        </li>
+      </SocialLinks>
     </AsideContainer>
   )
 }
