@@ -4,7 +4,7 @@ export const HomeContainer = styled('div', {
   base: {
     display: 'grid',
     gridTemplate: {
-      base: '1fr',
+      base: 'auto / auto',
       lg: `"a b" auto
            "c c" auto / minmax(420px, 38%) 1fr`,
     },
@@ -26,6 +26,29 @@ export const HomeContainer = styled('div', {
       gridArea: {
         base: 'auto',
         lg: 'c',
+      },
+
+      textAlign: 'center',
+
+      '& p:first-child': {
+        textStyle: 'sm',
+      },
+
+      '& p:last-child': {
+        color: 'subtitle',
+        textStyle: 'xs',
+      },
+
+      '& strong': {
+        fontWeight: 'medium',
+      },
+
+      '& a': {
+        transition: 'color 0.2s',
+
+        '&:hover': {
+          color: 'title',
+        },
       },
     },
   },
