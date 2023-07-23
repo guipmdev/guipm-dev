@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+import { AboutMe } from '@/components/AboutMe'
 import { Aside } from '@/components/Aside'
 
 import { HomeContainer } from './styles'
@@ -9,7 +10,10 @@ export default function Home() {
     <HomeContainer>
       <Aside />
 
-      <main>Main</main>
+      <main>
+        <AboutMe />
+        Main
+      </main>
 
       <footer>
         <p>

@@ -14,13 +14,15 @@ export const HomeContainer = styled('div', {
     '& main': {
       display: 'flex',
       flexDirection: 'column',
-      gap: '6rem',
-      gridArea: {
-        base: 'auto',
-        lg: 'b',
-      },
+      gap: '5.25rem',
+      gridArea: 'auto',
 
       paddingBottom: '5rem',
+
+      lg: {
+        gridArea: 'b',
+        gap: '9rem',
+      },
     },
 
     '& footer': {

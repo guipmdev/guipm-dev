@@ -13,5 +13,6 @@ export const globalCss = defineGlobalStyles({
 
     width: '100vw',
     height: '100vh',
+    maxWidth: '100%',
   },
 })
