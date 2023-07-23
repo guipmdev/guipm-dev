@@ -53,7 +53,11 @@ export const Navbar = styled('nav', {
       textStyle: 'xs',
       fontWeight: 'bold',
 
-      _motionReduce: { transition: 'none' },
+      _motionReduce: {
+        '&, & span': {
+          transition: 'none',
+        },
+      },
       _motionSafe: {
         '&, & span': {
           transition: 'color 0.2s, width 0.2s, background-color 0.2s',
@@ -91,7 +95,15 @@ export const SocialLinks = styled('ul', {
 
     '& li': {
       '& a': {
-        _motionReduce: { transition: 'none' },
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+        _motionReduce: {
+          '&, & span': {
+            transition: 'none',
+          },
+        },
         _motionSafe: {
           '&, & span': {
             transition: 'color 0.2s',
@@ -101,10 +113,6 @@ export const SocialLinks = styled('ul', {
         _hover: {
           color: 'title',
         },
-
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
       },
     },
   },
