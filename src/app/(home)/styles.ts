@@ -5,7 +5,7 @@ export const HomeContainer = styled('div', {
     display: 'grid',
     gridTemplateColumns: {
       base: '1fr',
-      lg: '37% 1fr',
+      lg: 'minmax(420px, 38%) 1fr',
     },
     gap: '2rem',
   },
