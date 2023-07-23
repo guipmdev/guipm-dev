@@ -47,7 +47,7 @@ export const HomeContainer = styled('div', {
         transition: 'color 0.2s',
 
         '&:hover': {
-          color: 'title',
+          color: 'text',
         },
       },
     },
