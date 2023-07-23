@@ -2,17 +2,19 @@ import { styled } from '@/styled-system/jsx'
 
 export const AsideContainer = styled('aside', {
   base: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: {
+      base: '2rem',
+      lg: '4rem',
+    },
+
     width: '100%',
   },
 })
 
 export const Bio = styled('div', {
   base: {
-    marginBottom: {
-      base: '2rem',
-      lg: '4rem',
-    },
-
     '& .logo': {
       display: 'flex',
       alignItems: 'center',
@@ -64,16 +66,9 @@ export const Bio = styled('div', {
 
 export const Navbar = styled('nav', {
   base: {
-    visibility: 'hidden',
-
-    maxHeight: 0,
-
-    lg: {
-      visibility: 'visible',
-
-      maxHeight: 'fit-content',
-
-      marginBottom: '4rem',
+    display: {
+      base: 'none',
+      lg: 'block',
     },
 
     '& a': {
