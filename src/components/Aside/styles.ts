@@ -14,6 +14,11 @@ export const AsideContainer = styled('aside', {
     },
 
     width: '100%',
+
+    marginBottom: {
+      base: '6rem',
+      lg: 0,
+    },
   },
 })
 
