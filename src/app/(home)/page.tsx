@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import { AboutMe } from '@/components/AboutMe'
 import { AsideHeader } from '@/components/AsideHeader'
-import { Experiences } from '@/components/Experiences'
+import { Experience } from '@/components/Experience'
 import { Section } from '@/components/Section'
 
 import { HomeContainer } from './styles'
@@ -13,11 +13,11 @@ export default function Home() {
       <AsideHeader />
 
       <main>
-        <Section title="SOBRE">
+        <Section title="SOBRE" id="about">
           <AboutMe />
         </Section>
-        <Section title="EXPERIÊNCIA">
-          <Experiences />
+        <Section title="EXPERIÊNCIA" id="experience">
+          <Experience />
         </Section>
         Main
       </main>

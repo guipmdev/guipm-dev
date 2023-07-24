@@ -6,6 +6,10 @@ export const globalCss = defineGlobalStyles({
     fontFamily: 'sans',
     fontSize: '1rem',
     lineHeight: '1.5rem',
+
+    _motionSafe: {
+      scrollBehavior: 'smooth',
+    },
   },
 
   body: {

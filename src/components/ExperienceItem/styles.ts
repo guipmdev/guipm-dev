@@ -1,5 +1,5 @@
 import { styled } from '@/styled-system/jsx'
 
-export const ExperiencesContainer = styled('ul', {
+export const ExperienceItemContainer = styled('li', {
   base: {},
 })

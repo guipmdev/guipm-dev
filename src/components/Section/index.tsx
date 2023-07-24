@@ -1,16 +1,16 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { ComponentPropsWithoutRef, useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 import { SectionContainer, SectionTitle } from './styles'
 
-interface SectionProps {
+interface SectionProps extends ComponentPropsWithoutRef<'section'> {
   title: string
   children: React.ReactNode
 }
 
-export function Section({ title, children }: SectionProps) {
+export function Section({ title, children, ...rest }: SectionProps) {
   const { ref, entry } = useInView({
     threshold: [1],
     rootMargin: '-1px 0px 0px 0px',
@@ -28,7 +28,7 @@ export function Section({ title, children }: SectionProps) {
   }, [entry?.intersectionRatio, isStickyDetectionReady])
 
   return (
-    <SectionContainer>
+    <SectionContainer {...rest}>
       <SectionTitle
         className={isPinned ? 'pinned' : undefined}
         isSticky={isStickyDetectionReady}

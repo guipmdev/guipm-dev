@@ -32,11 +32,11 @@ export function AsideHeader() {
       </Bio>
 
       <Navbar>
-        <Link href="/" className="active">
+        <Link href="#about" className="active">
           <span></span> SOBRE
         </Link>
 
-        <Link href="/">
+        <Link href="#experience">
           <span></span> EXPERIÊNCIA
         </Link>
 
