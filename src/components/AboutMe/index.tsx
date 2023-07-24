@@ -1,9 +1,10 @@
+import { SectionTitle } from '../SectionTitle'
 import { AboutMeContainer } from './styles'
 
 export function AboutMe() {
   return (
     <AboutMeContainer>
-      <h2>SOBRE</h2>
+      <SectionTitle title="SOBRE" />
 
       <div>
         <p>
