@@ -40,7 +40,7 @@ export function AsideHeader() {
           <span></span> EXPERIÊNCIA
         </Link>
 
-        <Link href="/">
+        <Link href="#projects">
           <span></span> PROJETOS
         </Link>
       </Navbar>
