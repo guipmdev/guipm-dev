@@ -8,31 +8,48 @@ import { SectionContainer, SectionTitle } from './styles'
 interface SectionProps extends ComponentPropsWithoutRef<'section'> {
   title: string
   children: React.ReactNode
+  changeActiveSection: (newActiveSection: string) => void
+  id: string
 }
 
-export function Section({ title, children, ...rest }: SectionProps) {
-  const { ref, entry } = useInView({
-    threshold: [1],
+export function Section({
+  title,
+  children,
+  changeActiveSection,
+  id,
+  ...rest
+}: SectionProps) {
+  const { ref: sectionRef, inView: sectionInView } = useInView({
+    threshold: 0.75,
+  })
+  const { ref: sectionTitleRef, entry: sectionTitleEntry } = useInView({
+    threshold: 1,
     rootMargin: '-1px 0px 0px 0px',
   })
+
   const [isPinned, setIsPinned] = useState(false)
 
-  const isStickyDetectionReady = !!entry
-
+  const isStickyDetectionReady = !!sectionTitleEntry
   useEffect(() => {
     if (isStickyDetectionReady) {
-      const elementVisibilityPercentage = entry.intersectionRatio
+      const elementVisibilityPercentage = sectionTitleEntry.intersectionRatio
 
       setIsPinned(elementVisibilityPercentage < 1)
     }
-  }, [entry?.intersectionRatio, isStickyDetectionReady])
+  }, [sectionTitleEntry?.intersectionRatio, isStickyDetectionReady])
+
+  useEffect(() => {
+    if (sectionInView) {
+      changeActiveSection(id)
+    }
+  }, [changeActiveSection, id, sectionInView])
 
   return (
-    <SectionContainer {...rest}>
+    <SectionContainer ref={sectionRef} id={id} {...rest}>
       <SectionTitle
         className={isPinned ? 'pinned' : undefined}
         isSticky={isStickyDetectionReady}
-        ref={ref}
+        ref={sectionTitleRef}
       >
         {title}
       </SectionTitle>

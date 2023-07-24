@@ -10,7 +10,11 @@ import guipmdevLogo from '@/assets/guipmdev-logo.svg'
 
 import { AsideHeaderContainer, Bio, Navbar, SocialLinks } from './styles'
 
-export function AsideHeader() {
+interface AsideHeaderProps {
+  activeSection: string
+}
+
+export function AsideHeader({ activeSection }: AsideHeaderProps) {
   return (
     <AsideHeaderContainer>
       <Bio>
@@ -32,15 +36,24 @@ export function AsideHeader() {
       </Bio>
 
       <Navbar>
-        <Link href="#about" className="active">
+        <Link
+          href="#about"
+          className={activeSection === 'about' ? 'active' : ''}
+        >
           <span></span> SOBRE
         </Link>
 
-        <Link href="#experience">
+        <Link
+          href="#experience"
+          className={activeSection === 'experience' ? 'active' : ''}
+        >
           <span></span> EXPERIÊNCIA
         </Link>
 
-        <Link href="#projects">
+        <Link
+          href="#projects"
+          className={activeSection === 'projects' ? 'active' : ''}
+        >
           <span></span> PROJETOS
         </Link>
       </Navbar>

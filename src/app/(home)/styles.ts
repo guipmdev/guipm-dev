@@ -15,7 +15,7 @@ export const HomeContainer = styled('div', {
     '& main': {
       display: 'flex',
       flexDirection: 'column',
-      gap: '5.25rem',
+      gap: '6rem',
       gridArea: 'auto',
 
       paddingBottom: '5rem',

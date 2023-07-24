@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { useState } from 'react'
 
 import { AboutMe } from '@/components/AboutMe'
 import { AsideHeader } from '@/components/AsideHeader'
@@ -8,15 +11,36 @@ import { Section } from '@/components/Section'
 import { HomeContainer } from './styles'
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState('about')
+
+  function changeActiveSection(newActiveSection: string) {
+    setActiveSection(newActiveSection)
+  }
+
   return (
     <HomeContainer>
-      <AsideHeader />
+      <AsideHeader activeSection={activeSection} />
 
       <main>
-        <Section title="SOBRE" id="about">
+        <Section
+          title="SOBRE"
+          id="about"
+          changeActiveSection={changeActiveSection}
+        >
           <AboutMe />
         </Section>
-        <Section title="EXPERIÊNCIA" id="experience">
+        <Section
+          title="EXPERIÊNCIA"
+          id="experience"
+          changeActiveSection={changeActiveSection}
+        >
+          <Experience />
+        </Section>
+        <Section
+          title="PROJETOS"
+          id="projects"
+          changeActiveSection={changeActiveSection}
+        >
           <Experience />
         </Section>
         Main

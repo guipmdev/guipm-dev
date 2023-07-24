@@ -4,7 +4,7 @@ export const SectionContainer = styled('section', {
   base: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '2.25rem',
+    gap: '1rem',
   },
 })
 

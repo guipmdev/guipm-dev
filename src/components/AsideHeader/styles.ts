@@ -4,25 +4,24 @@ export const AsideHeaderContainer = styled('header', {
   base: {
     display: 'flex',
     flexDirection: 'column',
-    gap: {
-      base: '2rem',
-      lg: '4rem',
-    },
-    gridArea: {
-      base: 'auto',
-      lg: 'a',
-    },
+    gap: '2rem',
+    gridArea: 'auto',
 
     width: '100%',
 
-    marginBottom: {
-      base: '6rem',
-      lg: 0,
-    },
+    marginBottom: '6rem',
 
     lg: {
       position: 'sticky',
       top: '6rem',
+
+      gridArea: 'a',
+      gap: '4rem',
+
+      height: '100%',
+      maxHeight: 'calc(100vh - (6rem * 2))',
+
+      marginBottom: 0,
     },
   },
 })
