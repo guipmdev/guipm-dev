@@ -10,6 +10,7 @@ export const globalCss = defineGlobalStyles({
     _motionSafe: {
       scrollBehavior: 'smooth',
     },
+    scrollPaddingTop: '6rem',
   },
 
   body: {
