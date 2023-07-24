@@ -14,10 +14,12 @@ export const globalCss = defineGlobalStyles({
   },
 
   body: {
+    position: 'relative',
+
     backgroundColor: 'background',
 
     width: '100vw',
-    height: '100vh',
     maxWidth: '100%',
+    minHeight: '100vh',
   },
 })
