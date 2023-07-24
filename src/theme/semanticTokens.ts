@@ -6,6 +6,7 @@ export const semanticTokens = defineSemanticTokens({
     primaryDark: { value: '{colors.skyDark.sky2}' },
 
     background: { value: '{colors.slateDark.slate1}' },
+    sectionTitleBackground: { value: '{colors.slateDarkA.slateA1/50}' },
 
     text: { value: '{colors.slateDark.slate11}' },
     title: { value: '{colors.slateDark.slate12}' },
