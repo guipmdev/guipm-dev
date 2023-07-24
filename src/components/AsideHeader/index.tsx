@@ -8,20 +8,20 @@ import Link from 'next/link'
 
 import guipmdevLogo from '@/assets/guipmdev-logo.svg'
 
-import { AsideContainer, Bio, Navbar, SocialLinks } from './styles'
+import { AsideHeaderContainer, Bio, Navbar, SocialLinks } from './styles'
 
-export function Aside() {
+export function AsideHeader() {
   return (
-    <AsideContainer>
+    <AsideHeaderContainer>
       <Bio>
         <div className="logo">
           <Image src={guipmdevLogo} alt="" />
 
           <div>
             <h1>GUIPM.DEV</h1>
-            <pre>
+            <strong>
               <span>&lt;</span>Fullstack developer <span>/&gt;</span>
-            </pre>
+            </strong>
           </div>
         </div>
 
@@ -47,23 +47,38 @@ export function Aside() {
 
       <SocialLinks>
         <li>
-          <Link href="/">
+          <Link
+            href="https://github.com/guipmdev"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub"
+          >
             <GitHubLogoIcon width={24} height={24} />
           </Link>
         </li>
 
         <li>
-          <Link href="/">
+          <Link
+            href="https://www.linkedin.com/in/guilhermeprevedamilek/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="LinkedIn"
+          >
             <LinkedInLogoIcon width={24} height={24} />
           </Link>
         </li>
 
         <li>
-          <Link href="/">
+          <Link
+            href="mailto:guipm.dev@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="E-mail"
+          >
             <EnvelopeClosedIcon width={24} height={24} />
           </Link>
         </li>
       </SocialLinks>
-    </AsideContainer>
+    </AsideHeaderContainer>
   )
 }

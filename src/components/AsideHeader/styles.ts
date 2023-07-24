@@ -1,6 +1,6 @@
 import { styled } from '@/styled-system/jsx'
 
-export const AsideContainer = styled('aside', {
+export const AsideHeaderContainer = styled('header', {
   base: {
     display: 'flex',
     flexDirection: 'column',
@@ -57,7 +57,7 @@ export const Bio = styled('div', {
         fontWeight: 'black',
       },
 
-      '& pre': {
+      '& strong': {
         fontFamily: 'mono',
         textStyle: {
           base: 'sm',
