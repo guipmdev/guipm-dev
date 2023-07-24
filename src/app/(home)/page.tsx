@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { AboutMe } from '@/components/AboutMe'
 import { Aside } from '@/components/Aside'
+import { Experiences } from '@/components/Experiences'
 import { Section } from '@/components/Section'
 
 import { HomeContainer } from './styles'
@@ -14,6 +15,9 @@ export default function Home() {
       <main>
         <Section title="SOBRE">
           <AboutMe />
+        </Section>
+        <Section title="EXPERIÊNCIA">
+          <Experiences />
         </Section>
         Main
       </main>
