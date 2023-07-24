@@ -1,8 +1,8 @@
 import { defineConfig } from '@pandacss/dev'
 
-import { globalCss } from '@/theme/global-css'
-import { semanticTokens } from '@/theme/semantic-tokens'
-import { textStyles } from '@/theme/text-styles'
+import { globalCss } from '@/theme/globalCss'
+import { semanticTokens } from '@/theme/semanticTokens'
+import { textStyles } from '@/theme/textStyles'
 import { tokens } from '@/theme/tokens'
 
 export default defineConfig({
