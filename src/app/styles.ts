@@ -2,7 +2,6 @@ import { styled } from '@/styled-system/jsx'
 
 export const BodyContent = styled('div', {
   base: {
-    width: '100%',
     maxWidth: 'breakpoint-xl',
 
     padding: {

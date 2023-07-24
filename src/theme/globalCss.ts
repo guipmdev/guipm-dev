@@ -19,7 +19,7 @@ export const globalCss = defineGlobalStyles({
     backgroundColor: 'background',
 
     width: '100vw',
-    maxWidth: '100%',
     minHeight: '100vh',
+    maxWidth: '100%',
   },
 })
