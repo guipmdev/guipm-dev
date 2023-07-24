@@ -28,11 +28,19 @@ export default function Home() {
         </p>
         <p>
           Inspirado em{' '}
-          <Link href="">
+          <Link
+            href="https://brittanychiang.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <strong>Brittany Chiang</strong>
           </Link>{' '}
           e{' '}
-          <Link href="">
+          <Link
+            href="https://www.codewonders.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <strong>Adenekan Wonderful</strong>
           </Link>
         </p>
