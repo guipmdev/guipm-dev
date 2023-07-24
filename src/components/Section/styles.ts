@@ -32,11 +32,17 @@ export const SectionTitle = styled('h2', {
       content: '""',
 
       backgroundColor: 'sectionTitleBackground',
-      width: 'calc(100% + (3rem * 2))',
+      width: 'calc(100% + (1.5rem * 2))',
 
-      marginLeft: '-3rem',
+      marginLeft: '-1.5rem',
 
       backdropFilter: 'blur(8px)',
+
+      md: {
+        width: 'calc(100% + (3rem * 2))',
+
+        marginLeft: '-3rem',
+      },
     },
   },
   variants: {

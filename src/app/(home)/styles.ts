@@ -10,6 +10,7 @@ export const HomeContainer = styled('div', {
     },
     rowGap: '1rem',
     columnGap: '2rem',
+    alignItems: 'start',
 
     '& main': {
       display: 'flex',

@@ -19,6 +19,11 @@ export const AsideHeaderContainer = styled('header', {
       base: '6rem',
       lg: 0,
     },
+
+    lg: {
+      position: 'sticky',
+      top: '6rem',
+    },
   },
 })
 
