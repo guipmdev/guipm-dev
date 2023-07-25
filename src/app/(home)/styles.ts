@@ -6,7 +6,7 @@ export const HomeContainer = styled('div', {
     gridTemplate: {
       base: 'auto / auto',
       lg: `"a b" auto
-           "c c" auto / minmax(420px, 38%) 1fr`,
+           "c c" auto / minmax(420px, 40%) 1fr`,
     },
     rowGap: '1rem',
     columnGap: '2rem',

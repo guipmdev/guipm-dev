@@ -45,11 +45,11 @@ export const Bio = styled('div', {
 
       '& img': {
         width: '2.8125rem',
-        height: '2.8125rem',
+        height: 'auto',
 
         sm: {
           width: '4.0625rem',
-          height: '4.0625rem',
+          height: 'auto',
         },
       },
 
@@ -92,10 +92,8 @@ export const Navbar = styled('nav', {
       textStyle: 'xs',
       fontWeight: 'bold',
 
-      _motionSafe: {
-        '&, & span': {
-          transition: 'color 0.2s, width 0.2s, background-color 0.2s',
-        },
+      '&, & span': {
+        transition: 'color 0.2s, width 0.2s, background-color 0.2s',
       },
 
       '& + a': {
@@ -138,11 +136,9 @@ export const SocialLinks = styled('ul', {
       justifyContent: 'center',
       alignItems: 'center',
 
-      _motionSafe: {
-        transition: 'color 0.2s',
-      },
+      transition: 'color 0.2s',
 
-      _hover: {
+      '&:hover': {
         color: 'title',
       },
     },

@@ -7,9 +7,7 @@ export const globalCss = defineGlobalStyles({
     fontSize: '1rem',
     lineHeight: '1.5rem',
 
-    _motionSafe: {
-      scrollBehavior: 'smooth',
-    },
+    scrollBehavior: 'smooth',
     scrollPaddingTop: '6rem',
   },
 
