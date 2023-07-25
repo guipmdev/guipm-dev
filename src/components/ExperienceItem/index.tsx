@@ -4,8 +4,12 @@ import Link from 'next/link'
 import { ExperienceItemContainer, Heading, Infos, Skills } from './styles'
 
 export function ExperienceItem() {
+  function handleClickCard() {
+    window.open('/', '_blank', 'noopener, noreferrer')
+  }
+
   return (
-    <ExperienceItemContainer>
+    <ExperienceItemContainer onClick={handleClickCard}>
       <div>
         <header>
           <span>mês de ano &mdash; mês de ano</span>
@@ -13,7 +17,7 @@ export function ExperienceItem() {
 
         <div>
           <Heading>
-            <Link href="/">
+            <Link href="/" target="_blank" rel="noopener noreferrer">
               Cargo &middot; Empresa{' '}
               <span>
                 <ExternalLinkIcon />
@@ -33,12 +37,12 @@ export function ExperienceItem() {
 
             <ul>
               <li>
-                <Link href="/">
+                <Link href="/" target="_blank" rel="noopener noreferrer">
                   <Link1Icon /> Link
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/" target="_blank" rel="noopener noreferrer">
                   <Link1Icon /> Link
                 </Link>
               </li>
