@@ -131,6 +131,8 @@ export const SocialLinks = styled('ul', {
     },
     gap: '1.5rem',
 
+    marginTop: 'auto',
+
     '& li a': {
       display: 'flex',
       justifyContent: 'center',
