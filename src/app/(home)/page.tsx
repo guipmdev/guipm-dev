@@ -23,22 +23,30 @@ export default function Home() {
 
       <main>
         <Section
-          title="SOBRE"
           id="about"
+          title="SOBRE"
           changeActiveSection={changeActiveSection}
         >
           <AboutMe />
         </Section>
         <Section
-          title="EXPERIÊNCIA"
           id="experience"
+          title="EXPERIÊNCIA"
+          link={{
+            text: 'Ver currículo completo',
+            url: 'https://guilhermeprevedamilek.com.br',
+          }}
           changeActiveSection={changeActiveSection}
         >
           <Experience />
         </Section>
         <Section
-          title="PROJETOS"
           id="projects"
+          title="PROJETOS"
+          link={{
+            text: 'Ver todos os projetos',
+            url: 'https://github.com/guipmdev?tab=repositories',
+          }}
           changeActiveSection={changeActiveSection}
         >
           <Experience />

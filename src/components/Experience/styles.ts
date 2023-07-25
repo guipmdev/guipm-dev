@@ -6,6 +6,8 @@ export const ExperienceContainer = styled('ul', {
     flexDirection: 'column',
     gap: '3rem',
 
+    width: '100%',
+
     lg: {
       '& > li': {
         transition: 'opacity 0.2s',

@@ -1,22 +1,28 @@
 'use client'
 
+import { ArrowRightIcon } from '@radix-ui/react-icons'
 import { ComponentPropsWithoutRef, useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 
-import { SectionContainer, SectionTitle } from './styles'
+import { CustomLink, SectionContainer, SectionTitle } from './styles'
 
 interface SectionProps extends ComponentPropsWithoutRef<'section'> {
+  id: string
   title: string
+  link?: {
+    text: string
+    url: string
+  }
   children: React.ReactNode
   changeActiveSection: (newActiveSection: string) => void
-  id: string
 }
 
 export function Section({
+  id,
   title,
+  link,
   children,
   changeActiveSection,
-  id,
   ...rest
 }: SectionProps) {
   const { ref: sectionRef, inView: sectionInView } = useInView({
@@ -44,6 +50,8 @@ export function Section({
     }
   }, [changeActiveSection, id, sectionInView])
 
+  const externalURL = !!link?.url.includes('https')
+
   return (
     <SectionContainer ref={sectionRef} id={id} {...rest}>
       <SectionTitle
@@ -55,6 +63,18 @@ export function Section({
       </SectionTitle>
 
       {children}
+
+      {!!link && (
+        <CustomLink
+          href={link.url}
+          {...(externalURL && {
+            target: '_blank',
+            rel: 'noopener noreferrer',
+          })}
+        >
+          <span>{link.text}</span> <ArrowRightIcon />
+        </CustomLink>
+      )}
     </SectionContainer>
   )
 }
