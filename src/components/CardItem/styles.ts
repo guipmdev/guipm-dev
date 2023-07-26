@@ -2,6 +2,12 @@ import { styled } from '@/styled-system/jsx'
 
 export const CardItemContainer = styled('li', {
   base: {
+    '&:hover': {
+      '& header img': {
+        borderColor: 'imageBorder.hover',
+      },
+    },
+
     lg: {
       position: 'relative',
 
@@ -9,8 +15,7 @@ export const CardItemContainer = styled('li', {
 
       '&::before': {
         position: 'absolute',
-        top: '-1.5rem',
-        left: '-1.5rem',
+        inset: '-1.5rem',
 
         content: '""',
 
@@ -51,11 +56,12 @@ export const CardItemContainer = styled('li', {
 
 export const CardItemContent = styled('div', {
   base: {
-    display: 'grid',
-    gridTemplateColumns: '1fr',
+    display: 'flex',
+    flexDirection: 'column',
     gap: '1rem',
 
     sm: {
+      display: 'grid',
       gridTemplateColumns: 'minmax(200px, 20%) 1fr',
     },
 
@@ -66,15 +72,36 @@ export const CardItemContent = styled('div', {
     },
 
     '& header': {
-      color: 'subtitle',
-      textStyle: 'xs',
-      fontWeight: 'semibold',
+      '& span': {
+        color: 'subtitle',
+        textStyle: 'xs',
+        fontWeight: 'semibold',
+      },
+
+      '& img': {
+        border: '2px solid',
+        borderColor: 'imageBorder.base',
+        borderRadius: '4px',
+
+        width: '100%',
+        height: 'auto',
+        maxWidth: '200px',
+
+        transition: 'border-color 0.2s',
+      },
     },
 
     '& > div': {
       display: 'flex',
       flexDirection: 'column',
       gap: '1rem',
+    },
+  },
+  variants: {
+    type: {
+      project: {
+        flexDirection: 'column-reverse',
+      },
     },
   },
 })
@@ -91,7 +118,7 @@ export const Heading = styled('h3', {
 
       transition: 'color 0.2s',
 
-      '& span': {
+      '& span.icon': {
         position: 'relative',
 
         display: 'flex',
@@ -107,6 +134,20 @@ export const Heading = styled('h3', {
           height: 'auto',
 
           transition: 'transform 0.2s',
+        },
+      },
+
+      '& span:not(.icon)': {
+        display: 'none',
+
+        lg: {
+          display: 'block',
+
+          position: 'absolute',
+          inset: '-1.5rem',
+
+          width: 'calc(100% + (1.5rem * 2))',
+          height: 'calc(100% + (1.5rem * 2))',
         },
       },
 
@@ -141,6 +182,8 @@ export const Infos = styled('div', {
     },
 
     '& ul': {
+      position: 'relative',
+
       display: 'flex',
       flexWrap: 'wrap',
       gap: '1rem',

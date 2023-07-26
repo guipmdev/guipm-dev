@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { AboutMe } from '@/components/AboutMe'
 import { AsideHeader } from '@/components/AsideHeader'
 import { ExperienceList } from '@/components/ExperienceList'
+import { ProjectList } from '@/components/ProjectList'
 import { Section } from '@/components/Section'
 
 import { HomeContainer } from './styles'
@@ -49,7 +50,7 @@ export default function Home() {
           }}
           changeActiveSection={changeActiveSection}
         >
-          <ExperienceList />
+          <ProjectList />
         </Section>
       </main>
 

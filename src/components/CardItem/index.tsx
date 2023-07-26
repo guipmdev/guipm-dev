@@ -15,28 +15,29 @@ interface CardItemProps {
 }
 
 export function CardItem({ type }: CardItemProps) {
-  function handleClickCard() {
-    window.open('/', '_blank', 'noopener, noreferrer')
-  }
-
   return (
-    <CardItemContainer onClick={handleClickCard}>
-      <CardItemContent>
+    <CardItemContainer>
+      <CardItemContent {...(type === 'project' && { type })}>
         <header>
           {type === 'experience' ? (
             <span>mês de ano &mdash; mês de ano</span>
           ) : (
-            <Image src="/" alt="" />
+            <Image src="" alt="" width={200} height={112.5} />
           )}
         </header>
 
         <div>
           <Heading>
-            <Link href="/" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://project.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Cargo &middot; Empresa{' '}
-              <span>
+              <span className="icon">
                 <ExternalLinkIcon />
               </span>
+              <span></span>
             </Link>
 
             <p>Cidade, Estado, País &middot; Tipo</p>
@@ -52,12 +53,20 @@ export function CardItem({ type }: CardItemProps) {
 
             <ul>
               <li>
-                <Link href="/" target="_blank" rel="noopener noreferrer">
+                <Link
+                  href="https://link.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Link1Icon /> Link
                 </Link>
               </li>
               <li>
-                <Link href="/" target="_blank" rel="noopener noreferrer">
+                <Link
+                  href="https://link.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Link1Icon /> Link
                 </Link>
               </li>
