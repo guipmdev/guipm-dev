@@ -7,6 +7,7 @@ import { AboutMe } from '@/components/AboutMe'
 import { AsideHeader } from '@/components/AsideHeader'
 import { Experience } from '@/components/Experience'
 import { Section } from '@/components/Section'
+import { Button } from '@/theme/recipes/buttonRecipe'
 
 import { HomeContainer } from './styles'
 
@@ -51,6 +52,7 @@ export default function Home() {
         >
           <Experience />
         </Section>
+        <Button>Button</Button> {/* DELETE!!! */}
       </main>
 
       <footer>
