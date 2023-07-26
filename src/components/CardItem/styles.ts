@@ -1,6 +1,6 @@
 import { styled } from '@/styled-system/jsx'
 
-export const ExperienceItemContainer = styled('li', {
+export const CardItemContainer = styled('li', {
   base: {
     lg: {
       position: 'relative',
@@ -46,33 +46,35 @@ export const ExperienceItemContainer = styled('li', {
         },
       },
     },
+  },
+})
+
+export const CardItemContent = styled('div', {
+  base: {
+    display: 'grid',
+    gridTemplateColumns: '1fr',
+    gap: '1rem',
+
+    sm: {
+      gridTemplateColumns: 'minmax(200px, 20%) 1fr',
+    },
+
+    lg: {
+      position: 'relative',
+      zIndex: 1,
+      gridTemplateColumns: 'minmax(120px, 20%) 1fr',
+    },
+
+    '& header': {
+      color: 'subtitle',
+      textStyle: 'xs',
+      fontWeight: 'semibold',
+    },
 
     '& > div': {
-      display: 'grid',
-      gridTemplateColumns: '1fr',
+      display: 'flex',
+      flexDirection: 'column',
       gap: '1rem',
-
-      sm: {
-        gridTemplateColumns: 'minmax(200px, 20%) 1fr',
-      },
-
-      lg: {
-        position: 'relative',
-        zIndex: 1,
-        gridTemplateColumns: 'minmax(120px, 20%) 1fr',
-      },
-
-      '& header': {
-        color: 'subtitle',
-        textStyle: 'xs',
-        fontWeight: 'semibold',
-      },
-
-      '& > div': {
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-      },
     },
   },
 })
@@ -162,7 +164,7 @@ export const Infos = styled('div', {
   },
 })
 
-export const Skills = styled('ul', {
+export const Tags = styled('ul', {
   base: {
     display: 'flex',
     flexWrap: 'wrap',

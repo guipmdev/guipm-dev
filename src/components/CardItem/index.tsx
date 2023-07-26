@@ -1,18 +1,33 @@
 import { ExternalLinkIcon, Link1Icon } from '@radix-ui/react-icons'
+import Image from 'next/image'
 import Link from 'next/link'
 
-import { ExperienceItemContainer, Heading, Infos, Skills } from './styles'
+import {
+  CardItemContainer,
+  CardItemContent,
+  Heading,
+  Infos,
+  Tags,
+} from './styles'
 
-export function ExperienceItem() {
+interface CardItemProps {
+  type: 'experience' | 'project'
+}
+
+export function CardItem({ type }: CardItemProps) {
   function handleClickCard() {
     window.open('/', '_blank', 'noopener, noreferrer')
   }
 
   return (
-    <ExperienceItemContainer onClick={handleClickCard}>
-      <div>
+    <CardItemContainer onClick={handleClickCard}>
+      <CardItemContent>
         <header>
-          <span>mês de ano &mdash; mês de ano</span>
+          {type === 'experience' ? (
+            <span>mês de ano &mdash; mês de ano</span>
+          ) : (
+            <Image src="/" alt="" />
+          )}
         </header>
 
         <div>
@@ -49,7 +64,7 @@ export function ExperienceItem() {
             </ul>
           </Infos>
 
-          <Skills>
+          <Tags>
             <li>
               <span>Conteúdo</span>
             </li>
@@ -62,9 +77,9 @@ export function ExperienceItem() {
             <li>
               <span>Conteúdo</span>
             </li>
-          </Skills>
+          </Tags>
         </div>
-      </div>
-    </ExperienceItemContainer>
+      </CardItemContent>
+    </CardItemContainer>
   )
 }

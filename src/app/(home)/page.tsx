@@ -5,9 +5,8 @@ import { useState } from 'react'
 
 import { AboutMe } from '@/components/AboutMe'
 import { AsideHeader } from '@/components/AsideHeader'
-import { Experience } from '@/components/Experience'
+import { ExperienceList } from '@/components/ExperienceList'
 import { Section } from '@/components/Section'
-import { Button } from '@/theme/recipes/buttonRecipe'
 
 import { HomeContainer } from './styles'
 
@@ -39,7 +38,7 @@ export default function Home() {
           }}
           changeActiveSection={changeActiveSection}
         >
-          <Experience />
+          <ExperienceList />
         </Section>
         <Section
           id="projects"
@@ -50,9 +49,8 @@ export default function Home() {
           }}
           changeActiveSection={changeActiveSection}
         >
-          <Experience />
+          <ExperienceList />
         </Section>
-        <Button>Button</Button> {/* DELETE!!! */}
       </main>
 
       <footer>
