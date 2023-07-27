@@ -1,30 +1,16 @@
 'use client'
 
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect } from 'react'
 
-import { useMousePosition } from '@/hooks/useMousePosition'
+import { useMouseEvent } from '@/hooks/useMouseEvent'
 
 import { CursorContainer, Dot, Outline } from './styles'
 
+const hoverableTags = ['A', 'BUTTON']
+const classNameEventTrigger = 'hoverable'
+
 export function Cursor() {
-  const hoverableTags = ['A', 'BUTTON']
-  const classNameEventTrigger = 'hoverable'
-
-  const mousePosition = useMousePosition()
-
-  const cursorRef = useRef<HTMLDivElement>(null)
-
-  const mouseEnterEvent = useCallback(() => {
-    if (cursorRef?.current) {
-      cursorRef.current.style.opacity = '1'
-    }
-  }, [])
-
-  const mouseLeaveEvent = useCallback(() => {
-    if (cursorRef?.current) {
-      cursorRef.current.style.opacity = '0'
-    }
-  }, [])
+  const { mousePosition, cursorRef } = useMouseEvent()
 
   const mouseOverEvent = useCallback(
     (event: MouseEvent) => {
@@ -38,7 +24,7 @@ export function Cursor() {
         cursorRef.current.classList.toggle('hover')
       }
     },
-    [hoverableTags],
+    [cursorRef],
   )
 
   const mouseOutEvent = useCallback(
@@ -53,26 +39,21 @@ export function Cursor() {
         cursorRef.current.classList.toggle('hover')
       }
     },
-    [hoverableTags],
+    [cursorRef],
   )
 
   useEffect(() => {
-    document.addEventListener('mouseenter', mouseEnterEvent)
-    document.addEventListener('mouseleave', mouseLeaveEvent)
     document.addEventListener('mouseover', mouseOverEvent)
     document.addEventListener('mouseout', mouseOutEvent)
 
     return () => {
-      document.removeEventListener('mouseenter', mouseEnterEvent)
-      document.removeEventListener('mouseleave', mouseLeaveEvent)
       document.removeEventListener('mouseover', mouseOverEvent)
       document.removeEventListener('mouseout', mouseOutEvent)
     }
-  }, [mouseEnterEvent, mouseLeaveEvent, mouseOutEvent, mouseOverEvent])
+  }, [mouseOutEvent, mouseOverEvent])
 
   return (
     <CursorContainer
-      className=""
       ref={cursorRef}
       style={{
         top: mousePosition.y + 'px',

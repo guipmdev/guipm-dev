@@ -19,5 +19,7 @@ export const CursorGradientContainer = styled('div', {
     height: '600px',
 
     transform: 'translate(-50%, -50%)',
+
+    transition: 'opacity 0.2s',
   },
 })

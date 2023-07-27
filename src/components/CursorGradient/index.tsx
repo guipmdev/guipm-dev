@@ -1,14 +1,15 @@
 'use client'
 
-import { useMousePosition } from '@/hooks/useMousePosition'
+import { useMouseEvent } from '@/hooks/useMouseEvent'
 
 import { CursorGradientContainer } from './styles'
 
 export function CursorGradient() {
-  const mousePosition = useMousePosition()
+  const { mousePosition, cursorRef } = useMouseEvent()
 
   return (
     <CursorGradientContainer
+      ref={cursorRef}
       style={{
         top: mousePosition.y + 'px',
         left: mousePosition.x + 'px',

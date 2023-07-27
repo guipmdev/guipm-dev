@@ -14,6 +14,8 @@ export const CursorContainer = styled('div', {
 
     transform: 'translate(-50%, -50%)',
 
+    transition: 'opacity 0.2s',
+
     '&.hover': {
       '& .outline': {
         transform: 'scale(0)',
