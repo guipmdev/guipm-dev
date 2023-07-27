@@ -7,6 +7,9 @@ import { useMousePosition } from '@/hooks/useMousePosition'
 import { CursorContainer, Dot, Outline } from './styles'
 
 export function Cursor() {
+  const hoverableTags = ['A', 'BUTTON']
+  const classNameEventTrigger = 'hoverable'
+
   const mousePosition = useMousePosition()
 
   const cursorRef = useRef<HTMLDivElement>(null)
@@ -23,31 +26,35 @@ export function Cursor() {
     }
   }, [])
 
-  const mouseOverEvent = useCallback((event: MouseEvent) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const targetClassname = (event.target as any)?.className
+  const mouseOverEvent = useCallback(
+    (event: MouseEvent) => {
+      const targetElement = event.target as HTMLElement
 
-    const hasClassname = targetClassname.length > 0
+      const isHoverable =
+        hoverableTags.includes(targetElement?.tagName) ||
+        targetElement?.classList.contains(classNameEventTrigger)
 
-    if (hasClassname && targetClassname.includes('cursorHover')) {
-      if (cursorRef?.current) {
+      if (isHoverable && cursorRef?.current) {
         cursorRef.current.classList.toggle('hover')
       }
-    }
-  }, [])
+    },
+    [hoverableTags],
+  )
 
-  const mouseOutEvent = useCallback((event: MouseEvent) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const targetClassname = (event.target as any)?.className
+  const mouseOutEvent = useCallback(
+    (event: MouseEvent) => {
+      const targetElement = event.target as HTMLElement
 
-    const hasClassname = targetClassname.length > 0
+      const isHoverable =
+        hoverableTags.includes(targetElement?.tagName) ||
+        targetElement?.classList.contains(classNameEventTrigger)
 
-    if (hasClassname && targetClassname.includes('cursorHover')) {
-      if (cursorRef?.current) {
+      if (isHoverable && cursorRef?.current) {
         cursorRef.current.classList.toggle('hover')
       }
-    }
-  }, [])
+    },
+    [hoverableTags],
+  )
 
   useEffect(() => {
     document.addEventListener('mouseenter', mouseEnterEvent)

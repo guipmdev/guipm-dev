@@ -64,7 +64,6 @@ export default function Home() {
             href="https://brittanychiang.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="cursorHover"
           >
             <strong>Brittany Chiang</strong>
           </Link>{' '}
@@ -73,7 +72,6 @@ export default function Home() {
             href="https://www.codewonders.dev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="cursorHover"
           >
             <strong>Adenekan Wonderful</strong>
           </Link>

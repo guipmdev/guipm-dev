@@ -32,13 +32,12 @@ export function CardItem({ type }: CardItemProps) {
               href="https://project.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="cursorHover"
             >
               Cargo &middot; Empresa{' '}
               <span className="icon">
                 <ExternalLinkIcon />
               </span>
-              <span className="cursorHover"></span>
+              <span className="hoverable"></span>
             </Link>
 
             <p>Cidade, Estado, País &middot; Tipo</p>
@@ -58,7 +57,6 @@ export function CardItem({ type }: CardItemProps) {
                   href="https://link.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursorHover"
                 >
                   <Link1Icon /> Link
                 </Link>
@@ -68,7 +66,6 @@ export function CardItem({ type }: CardItemProps) {
                   href="https://link.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursorHover"
                 >
                   <Link1Icon /> Link
                 </Link>

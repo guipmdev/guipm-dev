@@ -10,7 +10,7 @@ export const globalCss = defineGlobalStyles({
     scrollBehavior: 'smooth',
     scrollPaddingTop: '6rem',
 
-    '& svg, a *:not(.cursorHover)': {
+    '& svg, a *:not(.hoverable)': {
       pointerEvents: 'none',
     },
   },
