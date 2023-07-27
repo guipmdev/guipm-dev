@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 interface MousePosition {
   x: number
@@ -13,23 +13,22 @@ export function useMouseEvent() {
 
   const cursorRef = useRef<HTMLDivElement>(null)
 
-  const mouseEnterEvent = () => {
-    if (cursorRef?.current) {
-      cursorRef.current.style.opacity = '100%'
-    }
+  const toggleCursorVisibility = (opacity: '100%' | '0%') => {
+    if (cursorRef?.current) cursorRef.current.style.opacity = opacity
   }
 
-  const mouseLeaveEvent = () => {
-    if (cursorRef?.current) {
-      cursorRef.current.style.opacity = '0%'
-    }
+  const updateMousePosition = (event: MouseEvent) => {
+    setMousePosition({ x: event.clientX, y: event.clientY })
   }
+
+  const mouseEnterEvent = useCallback(() => {
+    toggleCursorVisibility('100%')
+  }, [])
+  const mouseLeaveEvent = useCallback(() => {
+    toggleCursorVisibility('0%')
+  }, [])
 
   useEffect(() => {
-    const updateMousePosition = (event: MouseEvent) => {
-      setMousePosition({ x: event.clientX, y: event.clientY })
-    }
-
     window.addEventListener('mousemove', updateMousePosition)
 
     document.addEventListener('mouseenter', mouseEnterEvent)
@@ -41,7 +40,7 @@ export function useMouseEvent() {
       document.removeEventListener('mouseenter', mouseEnterEvent)
       document.removeEventListener('mouseleave', mouseLeaveEvent)
     }
-  }, [])
+  }, [mouseEnterEvent, mouseLeaveEvent])
 
   return { mousePosition, cursorRef }
 }

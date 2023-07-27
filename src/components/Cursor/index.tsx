@@ -12,22 +12,7 @@ const classNameEventTrigger = 'hoverable'
 export function Cursor() {
   const { mousePosition, cursorRef } = useMouseEvent()
 
-  const mouseOverEvent = useCallback(
-    (event: MouseEvent) => {
-      const targetElement = event.target as HTMLElement
-
-      const isHoverable =
-        hoverableTags.includes(targetElement?.tagName) ||
-        targetElement?.classList.contains(classNameEventTrigger)
-
-      if (isHoverable && cursorRef?.current) {
-        cursorRef.current.classList.toggle('hover')
-      }
-    },
-    [cursorRef],
-  )
-
-  const mouseOutEvent = useCallback(
+  const toggleCursorSize = useCallback(
     (event: MouseEvent) => {
       const targetElement = event.target as HTMLElement
 
@@ -43,14 +28,14 @@ export function Cursor() {
   )
 
   useEffect(() => {
-    document.addEventListener('mouseover', mouseOverEvent)
-    document.addEventListener('mouseout', mouseOutEvent)
+    document.addEventListener('mouseover', toggleCursorSize)
+    document.addEventListener('mouseout', toggleCursorSize)
 
     return () => {
-      document.removeEventListener('mouseover', mouseOverEvent)
-      document.removeEventListener('mouseout', mouseOutEvent)
+      document.removeEventListener('mouseover', toggleCursorSize)
+      document.removeEventListener('mouseout', toggleCursorSize)
     }
-  }, [mouseOutEvent, mouseOverEvent])
+  }, [toggleCursorSize])
 
   return (
     <CursorContainer
