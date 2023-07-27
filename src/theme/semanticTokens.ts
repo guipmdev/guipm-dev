@@ -22,12 +22,19 @@ export const semanticTokens = defineSemanticTokens({
     subtitle: { value: '{colors.slateDark.slate10}' },
 
     gridLines: { value: '{colors.slateDarkA.slateA2/50}' },
+
+    cursorGradient: { value: '{colors.slateDarkA.slateA2/75}' },
+
+    cursor: { value: '{colors.slateDarkA.slateA12/30}' },
   },
 
   gradients: {
     grid: {
       value: `linear-gradient({colors.gridLines} 1px, transparent 1px),
           linear-gradient(to right, {colors.gridLines} 1px, transparent 1px)`,
+    },
+    cursor: {
+      value: 'radial-gradient(300px, {colors.cursorGradient}, transparent 80%)',
     },
   },
 })

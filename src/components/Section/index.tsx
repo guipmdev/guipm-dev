@@ -71,6 +71,7 @@ export function Section({
             target: '_blank',
             rel: 'noopener noreferrer',
           })}
+          className="cursorHover"
         >
           <span>{link.text}</span> <ArrowRightIcon />
         </CustomLink>

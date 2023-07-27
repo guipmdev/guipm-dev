@@ -84,6 +84,8 @@ export const Navbar = styled('nav', {
       lg: 'block',
     },
 
+    width: 'fit-content',
+
     '& a': {
       display: 'flex',
       alignItems: 'center',

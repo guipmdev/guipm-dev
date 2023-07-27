@@ -38,21 +38,25 @@ export function AsideHeader({ activeSection }: AsideHeaderProps) {
       <Navbar>
         <Link
           href="#about"
-          className={activeSection === 'about' ? 'active' : ''}
+          className={`cursorHover ${activeSection === 'about' ? 'active' : ''}`}
         >
           <span></span> SOBRE
         </Link>
 
         <Link
           href="#experience"
-          className={activeSection === 'experience' ? 'active' : ''}
+          className={`cursorHover ${
+            activeSection === 'experience' ? 'active' : ''
+          }`}
         >
           <span></span> EXPERIÊNCIA
         </Link>
 
         <Link
           href="#projects"
-          className={activeSection === 'projects' ? 'active' : ''}
+          className={`cursorHover ${
+            activeSection === 'projects' ? 'active' : ''
+          }`}
         >
           <span></span> PROJETOS
         </Link>
@@ -65,6 +69,7 @@ export function AsideHeader({ activeSection }: AsideHeaderProps) {
             target="_blank"
             rel="noopener noreferrer"
             title="GitHub"
+            className="cursorHover"
           >
             <GitHubLogoIcon width={24} height={24} />
           </Link>
@@ -76,6 +81,7 @@ export function AsideHeader({ activeSection }: AsideHeaderProps) {
             target="_blank"
             rel="noopener noreferrer"
             title="LinkedIn"
+            className="cursorHover"
           >
             <LinkedInLogoIcon width={24} height={24} />
           </Link>
@@ -87,6 +93,7 @@ export function AsideHeader({ activeSection }: AsideHeaderProps) {
             target="_blank"
             rel="noopener noreferrer"
             title="E-mail"
+            className="cursorHover"
           >
             <EnvelopeClosedIcon width={24} height={24} />
           </Link>

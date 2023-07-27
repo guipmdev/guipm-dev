@@ -6,6 +6,8 @@ export const BackgroundContainer = styled('div', {
     inset: 0,
     zIndex: -1,
 
+    overflow: 'hidden',
+
     '& img': {
       opacity: '5%',
       maskImage: 'linear-gradient(to top, transparent 0%, black 100%)',
