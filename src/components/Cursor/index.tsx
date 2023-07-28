@@ -41,18 +41,14 @@ export function Cursor() {
     }
   }, [isMounted, toggleCursorSize])
 
-  const updateMousePosition = async () => {
-    if (cursorRef?.current) {
-      await new Promise((resolve) => setTimeout(resolve, 150))
-
-      cursorRef.current.style.top = mousePosition.y + 'px'
-      cursorRef.current.style.left = mousePosition.x + 'px'
-    }
-  }
-  updateMousePosition()
-
   return (
-    <CursorContainer ref={cursorRef}>
+    <CursorContainer
+      ref={cursorRef}
+      style={{
+        top: mousePosition.y + 'px',
+        left: mousePosition.x + 'px',
+      }}
+    >
       <Outline className="outline"></Outline>
       <Dot className="dot"></Dot>
     </CursorContainer>
