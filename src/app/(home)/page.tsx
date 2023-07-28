@@ -18,6 +18,14 @@ export default function Home() {
     setActiveSection(newActiveSection)
   }
 
+  const fetchTransactions = async () => {
+    const response = await fetch('http://localhost:3000/projects')
+
+    console.log(response.json())
+  }
+
+  fetchTransactions()
+
   return (
     <HomeContainer>
       <AsideHeader activeSection={activeSection} />

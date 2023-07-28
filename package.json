@@ -7,7 +7,8 @@
     "dev": "rm -rf .next && next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix"
   },
   "dependencies": {
     "@radix-ui/colors": "^1.0.1",
@@ -21,11 +22,13 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-intersection-observer": "^9.5.2",
+    "sharp": "^0.32.4",
     "typescript": "5.1.6"
   },
   "devDependencies": {
     "@pandacss/dev": "^0.7.0",
     "@rocketseat/eslint-config": "^2.1.0",
     "eslint-plugin-simple-import-sort": "^10.0.0"
-  }
+  },
+  "type": "module"
 }
