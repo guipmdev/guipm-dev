@@ -5,7 +5,7 @@ import { useCallback, useEffect } from 'react'
 import { useIsMounted } from '@/hooks/useIsMounted'
 import { useMouseEvent } from '@/hooks/useMouseEvent'
 
-import { CursorContainer, Dot, Outline } from './styles'
+import { CursorContainer, Dot, DottedOutline, Outline } from './styles'
 
 const hoverableTags = ['A', 'BUTTON']
 const classNameEventTrigger = 'hoverable'
@@ -23,7 +23,11 @@ export function Cursor() {
         targetElement?.classList.contains(classNameEventTrigger)
 
       if (isHoverable && cursorRef?.current) {
-        cursorRef.current.classList.toggle('hover')
+        if (event.type === 'mouseover') {
+          cursorRef.current.classList.add('hover')
+        } else if (event.type === 'mouseout') {
+          cursorRef.current.classList.remove('hover')
+        }
       }
     },
     [cursorRef],
@@ -49,6 +53,7 @@ export function Cursor() {
         left: mousePosition.x + 'px',
       }}
     >
+      <DottedOutline className="dottedOutline"></DottedOutline>
       <Outline className="outline"></Outline>
       <Dot className="dot"></Dot>
     </CursorContainer>

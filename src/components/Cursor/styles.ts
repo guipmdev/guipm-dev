@@ -17,8 +17,13 @@ export const CursorContainer = styled('div', {
     transition: 'opacity 0.2s',
 
     '&.hover': {
+      '& .dottedOutline': {
+        width: '28px',
+        height: '28px',
+      },
+
       '& .outline': {
-        transform: 'scale(0)',
+        transform: 'scale(0%)',
       },
 
       '& .dot': {
@@ -30,6 +35,25 @@ export const CursorContainer = styled('div', {
         backgroundColor: 'cursor',
       },
     },
+  },
+})
+
+export const DottedOutline = styled('span', {
+  base: {
+    position: 'absolute',
+
+    display: 'block',
+
+    border: '1px dashed',
+    borderColor: 'subtitle',
+    borderRadius: '50%',
+
+    width: '105px',
+    height: '105px',
+
+    transition: 'width 0.75s, height 0.75s',
+
+    animation: 'spin 15s infinite linear',
   },
 })
 
@@ -46,7 +70,7 @@ export const Outline = styled('span', {
     width: '85px',
     height: '85px',
 
-    transition: 'transform 0.5s',
+    transition: 'transform 0.75s',
   },
 })
 
