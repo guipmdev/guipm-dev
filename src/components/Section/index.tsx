@@ -58,8 +58,9 @@ export function Section({
         className={isPinned ? 'pinned' : undefined}
         isSticky={isStickyDetectionReady}
         ref={sectionTitleRef}
+        href={`#${id}`}
       >
-        {title}
+        <h2>{title}</h2>
       </SectionTitle>
 
       {children}

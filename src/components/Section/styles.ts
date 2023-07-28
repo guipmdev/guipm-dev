@@ -14,7 +14,7 @@ export const SectionContainer = styled('section', {
   },
 })
 
-export const SectionTitle = styled('h2', {
+export const SectionTitle = styled(Link, {
   base: {
     top: 0,
     zIndex: 2,
