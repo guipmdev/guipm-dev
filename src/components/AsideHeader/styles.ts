@@ -47,9 +47,17 @@ export const Bio = styled('div', {
         width: '2.8125rem',
         height: 'auto',
 
+        transform: 'rotate(0deg)',
+
+        transition: 'transform 1s',
+
         sm: {
           width: '4.0625rem',
           height: 'auto',
+        },
+
+        '&:hover': {
+          transform: 'rotate(-22.5deg)',
         },
       },
 
