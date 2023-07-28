@@ -10,8 +10,8 @@ interface MousePosition {
 export function useMouseEvent() {
   const isMounted = useIsMounted()
   const [mousePosition, setMousePosition] = useState<MousePosition>({
-    x: 0,
-    y: 0,
+    x: -52.5,
+    y: -52.5,
   })
 
   const cursorRef = useRef<HTMLDivElement>(null)
