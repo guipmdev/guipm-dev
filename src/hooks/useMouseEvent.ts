@@ -1,11 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
+import { useIsMounted } from './useIsMounted'
+
 interface MousePosition {
   x: number
   y: number
 }
 
 export function useMouseEvent() {
+  const isMounted = useIsMounted()
   const [mousePosition, setMousePosition] = useState<MousePosition>({
     x: 0,
     y: 0,
@@ -28,19 +31,32 @@ export function useMouseEvent() {
     toggleCursorVisibility('0%')
   }, [])
 
-  useEffect(() => {
-    window.addEventListener('mousemove', updateMousePosition)
+  const toggleGradientDisplay = useCallback(
+    (display: 'none' | 'flex') => {
+      if (cursorRef?.current) cursorRef.current.style.display = display
+    },
+    [cursorRef],
+  )
 
-    document.addEventListener('mouseenter', mouseEnterEvent)
-    document.addEventListener('mouseleave', mouseLeaveEvent)
+  useEffect(() => {
+    if (isMounted()) {
+      window.addEventListener('mousemove', updateMousePosition)
+
+      document.addEventListener('mouseenter', mouseEnterEvent)
+      document.addEventListener('mouseleave', mouseLeaveEvent)
+
+      toggleGradientDisplay('flex')
+    }
 
     return () => {
       window.removeEventListener('mousemove', updateMousePosition)
 
       document.removeEventListener('mouseenter', mouseEnterEvent)
       document.removeEventListener('mouseleave', mouseLeaveEvent)
+
+      toggleGradientDisplay('none')
     }
-  }, [mouseEnterEvent, mouseLeaveEvent])
+  }, [isMounted, mouseEnterEvent, mouseLeaveEvent, toggleGradientDisplay])
 
   return { mousePosition, cursorRef }
 }

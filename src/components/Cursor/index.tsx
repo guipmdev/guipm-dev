@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect } from 'react'
 
+import { useIsMounted } from '@/hooks/useIsMounted'
 import { useMouseEvent } from '@/hooks/useMouseEvent'
 
 import { CursorContainer, Dot, Outline } from './styles'
@@ -10,6 +11,7 @@ const hoverableTags = ['A', 'BUTTON']
 const classNameEventTrigger = 'hoverable'
 
 export function Cursor() {
+  const isMounted = useIsMounted()
   const { mousePosition, cursorRef } = useMouseEvent()
 
   const toggleCursorSize = useCallback(
@@ -28,14 +30,16 @@ export function Cursor() {
   )
 
   useEffect(() => {
-    document.addEventListener('mouseover', toggleCursorSize)
-    document.addEventListener('mouseout', toggleCursorSize)
+    if (isMounted()) {
+      document.addEventListener('mouseover', toggleCursorSize)
+      document.addEventListener('mouseout', toggleCursorSize)
+    }
 
     return () => {
       document.removeEventListener('mouseover', toggleCursorSize)
       document.removeEventListener('mouseout', toggleCursorSize)
     }
-  }, [toggleCursorSize])
+  }, [isMounted, toggleCursorSize])
 
   return (
     <CursorContainer

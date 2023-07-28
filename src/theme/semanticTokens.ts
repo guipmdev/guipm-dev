@@ -21,9 +21,9 @@ export const semanticTokens = defineSemanticTokens({
     title: { value: '{colors.slateDark.slate12}' },
     subtitle: { value: '{colors.slateDark.slate10}' },
 
-    gridLines: { value: '{colors.slateDarkA.slateA2/50}' },
+    gridLines: { value: '{colors.slateDarkA.slateA2/75}' },
 
-    cursorGradient: { value: '{colors.slateDarkA.slateA2/75}' },
+    cursorGradient: { value: '{colors.slateDarkA.slateA2/50}' },
 
     cursor: { value: '{colors.slateDarkA.slateA12/30}' },
   },

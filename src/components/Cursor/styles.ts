@@ -6,7 +6,7 @@ export const CursorContainer = styled('div', {
     inset: 0,
     zIndex: 10,
 
-    display: 'flex',
+    display: 'none',
     justifyContent: 'center',
     alignItems: 'center',
 

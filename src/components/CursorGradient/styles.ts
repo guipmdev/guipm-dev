@@ -5,7 +5,7 @@ export const CursorGradientContainer = styled('div', {
     position: 'fixed',
     inset: 0,
 
-    display: 'flex',
+    display: 'none',
     justifyContent: 'center',
     alignItems: 'center',
 
