@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-
-import { useIsMounted } from './useIsMounted'
+import { useIsMounted } from 'usehooks-ts'
 
 interface MousePosition {
   x: number

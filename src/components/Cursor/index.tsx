@@ -1,8 +1,8 @@
 'use client'
 
 import { useCallback, useEffect } from 'react'
+import { useIsMounted } from 'usehooks-ts'
 
-import { useIsMounted } from '@/hooks/useIsMounted'
 import { useMouseEvent } from '@/hooks/useMouseEvent'
 
 import { CursorContainer, Dot, DottedOutline, Outline } from './styles'

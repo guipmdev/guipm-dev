@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { useInView } from 'react-intersection-observer'
+import { useEffect, useRef, useState } from 'react'
+import { useIntersectionObserver } from 'usehooks-ts'
 
 import { SectionTitleContainer } from './styles'
 
@@ -11,7 +11,8 @@ interface SectionTitleProps {
 }
 
 export function SectionTitle({ id, title }: SectionTitleProps) {
-  const { ref, entry } = useInView({
+  const ref = useRef<HTMLAnchorElement | null>(null)
+  const entry = useIntersectionObserver(ref, {
     threshold: 1,
     rootMargin: '-1px 0px 0px 0px',
   })

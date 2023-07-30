@@ -26,7 +26,7 @@ export default function Home() {
             url: 'https://guilhermeprevedamilek.com.br',
           }}
         >
-          {/* <ExperienceList /> */}
+          <ExperienceList />
           <a></a>
         </Section>
 

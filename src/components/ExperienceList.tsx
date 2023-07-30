@@ -20,7 +20,7 @@ async function getExperiences(): Promise<Experience[]> {
   return response.json()
 }
 
-export async function ExperienceListComponent() {
+export async function ExperienceList() {
   const experiences = await getExperiences().catch(() => [])
 
   return (
@@ -35,5 +35,3 @@ export async function ExperienceListComponent() {
     </CardList>
   )
 }
-
-export const ExperienceList = memo(ExperienceListComponent)
