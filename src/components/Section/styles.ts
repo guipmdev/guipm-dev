@@ -14,55 +14,6 @@ export const SectionContainer = styled('section', {
   },
 })
 
-export const SectionTitle = styled(Link, {
-  base: {
-    top: 0,
-    zIndex: 2,
-
-    display: {
-      base: 'block',
-      lg: 'none',
-    },
-
-    width: '100%',
-
-    padding: '1.25rem 0',
-
-    color: 'title',
-    textStyle: 'sm',
-    fontWeight: 'bold',
-
-    '&.pinned::before': {
-      position: 'absolute',
-      top: 0,
-      bottom: 0,
-      zIndex: -1,
-
-      content: '""',
-
-      backgroundColor: 'sectionTitleBackground',
-      width: 'calc(100% + (1.5rem * 2))',
-
-      marginLeft: '-1.5rem',
-
-      backdropFilter: 'blur(8px)',
-
-      md: {
-        width: 'calc(100% + (3rem * 2))',
-
-        marginLeft: '-3rem',
-      },
-    },
-  },
-  variants: {
-    isSticky: {
-      true: {
-        position: 'sticky',
-      },
-    },
-  },
-})
-
 export const CustomLink = styled(Link, {
   base: {
     width: 'fit-content',

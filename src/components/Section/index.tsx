@@ -1,10 +1,8 @@
-'use client'
-
 import { ArrowRightIcon } from '@radix-ui/react-icons'
-import { ComponentPropsWithoutRef, useEffect, useState } from 'react'
-import { useInView } from 'react-intersection-observer'
+import React, { ComponentPropsWithoutRef } from 'react'
 
-import { CustomLink, SectionContainer, SectionTitle } from './styles'
+import { SectionTitle } from '../SectionTitle'
+import { CustomLink, SectionContainer } from './styles'
 
 interface SectionProps extends ComponentPropsWithoutRef<'section'> {
   id: string
@@ -14,54 +12,14 @@ interface SectionProps extends ComponentPropsWithoutRef<'section'> {
     url: string
   }
   children: React.ReactNode
-  changeActiveSection: (newActiveSection: string) => void
 }
 
-export function Section({
-  id,
-  title,
-  link,
-  children,
-  changeActiveSection,
-  ...rest
-}: SectionProps) {
-  const { ref: sectionRef, inView: sectionInView } = useInView({
-    threshold: 0.75,
-  })
-  const { ref: sectionTitleRef, entry: sectionTitleEntry } = useInView({
-    threshold: 1,
-    rootMargin: '-1px 0px 0px 0px',
-  })
-
-  const [isPinned, setIsPinned] = useState(false)
-
-  const isStickyDetectionReady = !!sectionTitleEntry
-  useEffect(() => {
-    if (isStickyDetectionReady) {
-      const elementVisibilityPercentage = sectionTitleEntry.intersectionRatio
-
-      setIsPinned(elementVisibilityPercentage < 1)
-    }
-  }, [sectionTitleEntry?.intersectionRatio, isStickyDetectionReady])
-
-  useEffect(() => {
-    if (sectionInView) {
-      changeActiveSection(id)
-    }
-  }, [changeActiveSection, id, sectionInView])
-
+export function Section({ id, title, link, children, ...rest }: SectionProps) {
   const externalURL = !!link?.url.includes('https')
 
   return (
-    <SectionContainer ref={sectionRef} id={id} {...rest}>
-      <SectionTitle
-        className={isPinned ? 'pinned' : undefined}
-        isSticky={isStickyDetectionReady}
-        ref={sectionTitleRef}
-        href={`#${id}`}
-      >
-        <h2>{title}</h2>
-      </SectionTitle>
+    <SectionContainer id={id} {...rest}>
+      <SectionTitle id={id} title={title} />
 
       {children}
 

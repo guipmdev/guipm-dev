@@ -1,7 +1,4 @@
-'use client'
-
 import Link from 'next/link'
-import { useState } from 'react'
 
 import { AboutMe } from '@/components/AboutMe'
 import { AsideHeader } from '@/components/AsideHeader'
@@ -12,32 +9,15 @@ import { Section } from '@/components/Section'
 import { HomeContainer } from './styles'
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState('about')
-
-  function changeActiveSection(newActiveSection: string) {
-    setActiveSection(newActiveSection)
-  }
-
-  const fetchTransactions = async () => {
-    const response = await fetch('http://localhost:3000/projects')
-
-    console.log(response.json())
-  }
-
-  fetchTransactions()
-
   return (
     <HomeContainer>
-      <AsideHeader activeSection={activeSection} />
+      <AsideHeader />
 
       <main>
-        <Section
-          id="about"
-          title="SOBRE"
-          changeActiveSection={changeActiveSection}
-        >
+        <Section id="about" title="SOBRE">
           <AboutMe />
         </Section>
+
         <Section
           id="experience"
           title="EXPERIÊNCIA"
@@ -45,10 +25,11 @@ export default function Home() {
             text: 'Ver currículo completo',
             url: 'https://guilhermeprevedamilek.com.br',
           }}
-          changeActiveSection={changeActiveSection}
         >
-          <ExperienceList />
+          {/* <ExperienceList /> */}
+          <a></a>
         </Section>
+
         <Section
           id="projects"
           title="PROJETOS"
@@ -56,7 +37,6 @@ export default function Home() {
             text: 'Ver todos os projetos',
             url: 'https://github.com/guipmdev?tab=repositories',
           }}
-          changeActiveSection={changeActiveSection}
         >
           <ProjectList />
         </Section>

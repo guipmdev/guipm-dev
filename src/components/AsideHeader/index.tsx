@@ -1,3 +1,5 @@
+'use client'
+
 import {
   EnvelopeClosedIcon,
   GitHubLogoIcon,
@@ -7,14 +9,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import guipmdevLogo from '@/assets/guipmdev-logo.svg'
+import { useActiveItem } from '@/hooks/useActiveItem'
 
 import { AsideHeaderContainer, Bio, Navbar, SocialLinks } from './styles'
 
-interface AsideHeaderProps {
-  activeSection: string
-}
+export function AsideHeader() {
+  const activeSection = useActiveItem(
+    ['about', 'experience', 'projects'],
+    'about',
+  )
 
-export function AsideHeader({ activeSection }: AsideHeaderProps) {
   return (
     <AsideHeaderContainer>
       <Bio>

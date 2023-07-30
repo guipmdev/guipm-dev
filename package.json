@@ -29,6 +29,5 @@
     "@pandacss/dev": "^0.7.0",
     "@rocketseat/eslint-config": "^2.1.0",
     "eslint-plugin-simple-import-sort": "^10.0.0"
-  },
-  "type": "module"
+  }
 }
