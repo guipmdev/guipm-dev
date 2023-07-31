@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import guipmdevLogo from '@/assets/guipmdev-logo.svg'
 import { icons } from '@/libs/radixIcons'
+import { api } from '@/libs/wretch'
 
 import { Navbar } from '../Navbar'
 import { AsideHeaderContainer, Bio, SocialLinks } from './styles'
@@ -19,18 +20,8 @@ interface Profile {
   links: Link[]
 }
 
-async function getProfile(): Promise<Profile> {
-  const response = await fetch(`${process.env.API_BASE_URL}/profile`)
-
-  if (!response.ok) {
-    throw new Error('Failed to fetch data')
-  }
-
-  return response.json()
-}
-
 export async function AsideHeader() {
-  const profile = await getProfile()
+  const profile: Profile = await api.get('/profile').json()
 
   const { headline, links } = profile
 

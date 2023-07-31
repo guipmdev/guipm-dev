@@ -6,7 +6,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http', // ALTERAR DEPOIS
+        protocol: 'https',
         hostname: '**',
       },
     ],

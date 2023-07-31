@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import wretch from 'wretch'
 
 import { Experience, Project } from '..'
 import { HeadingCardItemContainer } from './styles'
@@ -30,16 +31,6 @@ interface Location {
   gia: string
   ddd: string
   siafi: string
-}
-
-async function getLocation(cep: string): Promise<Location> {
-  const response = await fetch(`https://viacep.com.br/ws/${cep}/json`)
-
-  if (!response.ok) {
-    throw new Error('Failed to fetch data')
-  }
-
-  return response.json()
 }
 
 function getStateName(stateAbbr: string) {
@@ -94,7 +85,11 @@ export async function HeadingCardItem({
       const headingSubtitleArray = []
 
       if (data.location) {
-        const detailedLocation = await getLocation(data.location.postalCode)
+        const detailedLocation: Location = await wretch(
+          `https://viacep.com.br/ws/${data.location.postalCode}/json`,
+        )
+          .get()
+          .json()
 
         const headingLocation = `${detailedLocation.localidade}, ${getStateName(
           detailedLocation.uf,
