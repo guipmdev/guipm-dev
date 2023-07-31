@@ -33,7 +33,7 @@ interface Location {
 }
 
 async function getLocation(cep: string): Promise<Location> {
-  const response = await fetch(`${process.env.VIACEP_BASE_URL}/${cep}/json`)
+  const response = await fetch(`https://viacep.com.br/ws/${cep}/json`)
 
   if (!response.ok) {
     throw new Error('Failed to fetch data')
