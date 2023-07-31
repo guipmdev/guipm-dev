@@ -1,6 +1,8 @@
 import { ExternalLinkIcon, Link1Icon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 
+import { icons } from '@/libs/radixIcons'
+
 import { HeaderCardItem } from './Header'
 import { HeadingCardItem } from './Heading'
 import { CardItemContainer, CardItemContent, Infos, Tags } from './styles'
@@ -10,10 +12,12 @@ interface CustomDate {
   year: number
 }
 
-interface AdditionalLink {
+type LinkType = typeof icons
+
+interface Link {
   title: string
   url: string
-  type: string
+  type: keyof LinkType
 }
 
 export interface Experience {
@@ -29,7 +33,7 @@ export interface Experience {
   } | null
   locationName: 'Presencial' | 'Híbrida' | 'Remota' | null
   description: string[] | null
-  additionalLinks: AdditionalLink[] | null
+  additionalLinks: Link[] | null
   skills: string[] | null
 }
 
@@ -39,7 +43,7 @@ export interface Project {
   title: string
   link: string | null
   description: string[] | null
-  additionalLinks: AdditionalLink[] | null
+  additionalLinks: Link[] | null
   tags: string[] | null
 }
 
@@ -100,17 +104,21 @@ export function CardItem(props: CardItemProps) {
 
             {hasAdditionalLinks && (
               <ul>
-                {additionalLinks.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Link1Icon /> {link.title}
-                    </Link>
-                  </li>
-                ))}
+                {additionalLinks.map((link, index) => {
+                  const Icon = icons[link.type]
+
+                  return (
+                    <li key={index}>
+                      <Link
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Icon /> {link.title}
+                      </Link>
+                    </li>
+                  )
+                })}
               </ul>
             )}
           </Infos>
