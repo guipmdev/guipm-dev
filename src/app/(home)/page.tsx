@@ -27,7 +27,6 @@ export default function Home() {
           }}
         >
           <ExperienceList />
-          <a></a>
         </Section>
 
         <Section
