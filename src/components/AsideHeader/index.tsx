@@ -1,5 +1,3 @@
-'use client'
-
 import {
   EnvelopeClosedIcon,
   GitHubLogoIcon,
@@ -9,15 +7,27 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import guipmdevLogo from '@/assets/guipmdev-logo.svg'
-import { useActiveItem } from '@/hooks/useActiveItem'
 
-import { AsideHeaderContainer, Bio, Navbar, SocialLinks } from './styles'
+import { Navbar } from '../Navbar'
+import { AsideHeaderContainer, Bio, SocialLinks } from './styles'
 
-export function AsideHeader() {
-  const activeSection = useActiveItem(
-    ['about', 'experience', 'projects'],
-    'about',
-  )
+interface Profile {
+  headline: string
+  links: Record<'github' | 'linkedin' | 'email', string>
+}
+
+async function getProfile(): Promise<Profile> {
+  const response = await fetch(`${process.env.API_BASE_URL}/profile`)
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch data')
+  }
+
+  return response.json()
+}
+
+export async function AsideHeader() {
+  const profile = await getProfile()
 
   return (
     <AsideHeaderContainer>
@@ -33,39 +43,15 @@ export function AsideHeader() {
           </div>
         </div>
 
-        <p>
-          👋 Olá! Meu nome é Guilherme, um desenvolvedor apaixonado por explorar
-          o universo dos códigos e encarar desafios.
-        </p>
+        <p>{profile.headline}</p>
       </Bio>
 
-      <Navbar>
-        <Link
-          href="#about"
-          className={activeSection === 'about' ? 'active' : ''}
-        >
-          <span></span> SOBRE
-        </Link>
-
-        <Link
-          href="#experience"
-          className={activeSection === 'experience' ? 'active' : ''}
-        >
-          <span></span> EXPERIÊNCIA
-        </Link>
-
-        <Link
-          href="#projects"
-          className={activeSection === 'projects' ? 'active' : ''}
-        >
-          <span></span> PROJETOS
-        </Link>
-      </Navbar>
+      <Navbar />
 
       <SocialLinks>
         <li>
           <Link
-            href="https://github.com/guipmdev"
+            href={profile.links.github}
             target="_blank"
             rel="noopener noreferrer"
             title="GitHub"
@@ -76,7 +62,7 @@ export function AsideHeader() {
 
         <li>
           <Link
-            href="https://www.linkedin.com/in/guilhermeprevedamilek/"
+            href={profile.links.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             title="LinkedIn"
@@ -87,7 +73,7 @@ export function AsideHeader() {
 
         <li>
           <Link
-            href="mailto:guipm.dev@gmail.com"
+            href={profile.links.email}
             target="_blank"
             rel="noopener noreferrer"
             title="E-mail"
