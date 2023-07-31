@@ -1,7 +1,7 @@
-import { ExternalLinkIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
+import { RxExternalLink } from 'react-icons/rx'
 
-import { icons } from '@/libs/radixIcons'
+import { icons } from '@/libs/reactIcons'
 
 import { HeaderCardItem } from './Header'
 import { HeadingCardItem } from './Heading'
@@ -84,7 +84,7 @@ export function CardItem(props: CardItemProps) {
               <Link href={link} target="_blank" rel="noopener noreferrer">
                 {headingTitle}
                 <span className="icon">
-                  <ExternalLinkIcon />
+                  <RxExternalLink />
                 </span>
                 <span className="hoverable"></span>
               </Link>

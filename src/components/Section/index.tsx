@@ -1,5 +1,5 @@
-import { ArrowRightIcon } from '@radix-ui/react-icons'
 import React, { ComponentPropsWithoutRef } from 'react'
+import { RxArrowRight } from 'react-icons/rx'
 
 import { SectionTitle } from '../SectionTitle'
 import { CustomLink, SectionContainer } from './styles'
@@ -31,7 +31,7 @@ export function Section({ id, title, link, children, ...rest }: SectionProps) {
             rel: 'noopener noreferrer',
           })}
         >
-          <span>{link.text}</span> <ArrowRightIcon />
+          <span>{link.text}</span> <RxArrowRight />
         </CustomLink>
       )}
     </SectionContainer>

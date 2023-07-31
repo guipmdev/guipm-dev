@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import guipmdevLogo from '@/assets/guipmdev-logo.svg'
-import { icons } from '@/libs/radixIcons'
+import { icons } from '@/libs/reactIcons'
 import { api } from '@/libs/wretch'
 
 import { Navbar } from '../Navbar'
