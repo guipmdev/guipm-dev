@@ -1,14 +1,6 @@
-import { memo } from 'react'
-
 import { CardList } from '@/theme/recipes/cardListRecipe'
 
-import { CardItem } from './CardItem'
-
-interface Experience {
-  id: string
-  startDate: string
-  endDate: string
-}
+import { CardItem, Experience } from './CardItem'
 
 async function getExperiences(): Promise<Experience[]> {
   const response = await fetch(`${process.env.API_BASE_URL}/experiences`)
@@ -26,12 +18,8 @@ export async function ExperienceList() {
   return (
     <CardList>
       {experiences.map((experience) => (
-        <CardItem type="experience" key={experience.id} />
+        <CardItem key={experience.id} type="experience" data={experience} />
       ))}
-
-      <CardItem type="experience" />
-      <CardItem type="experience" />
-      <CardItem type="experience" />
     </CardList>
   )
 }

@@ -2,6 +2,15 @@
 const nextConfig = {
   env: {
     API_BASE_URL: process.env.API_BASE_URL,
+    VIACEP_BASE_URL: process.env.VIACEP_BASE_URL,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http', // ALTERAR DEPOIS
+        hostname: '**',
+      },
+    ],
   },
 }
 

@@ -1,13 +1,25 @@
 import { CardList } from '@/theme/recipes/cardListRecipe'
 
-import { CardItem } from './CardItem'
+import { CardItem, Project } from './CardItem'
 
-export function ProjectList() {
+async function getProjects(): Promise<Project[]> {
+  const response = await fetch(`${process.env.API_BASE_URL}/projects`)
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch data')
+  }
+
+  return response.json()
+}
+
+export async function ProjectList() {
+  const projects = await getProjects().catch(() => [])
+
   return (
     <CardList>
-      <CardItem type="project" />
-      <CardItem type="project" />
-      <CardItem type="project" />
+      {projects.map((project) => (
+        <CardItem key={project.id} type="project" data={project} />
+      ))}
     </CardList>
   )
 }

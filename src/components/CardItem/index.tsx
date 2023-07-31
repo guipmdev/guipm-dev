@@ -1,92 +1,129 @@
 import { ExternalLinkIcon, Link1Icon } from '@radix-ui/react-icons'
-import Image from 'next/image'
 import Link from 'next/link'
 
-import {
-  CardItemContainer,
-  CardItemContent,
-  Heading,
-  Infos,
-  Tags,
-} from './styles'
+import { HeaderCardItem } from './Header'
+import { HeadingCardItem } from './Heading'
+import { CardItemContainer, CardItemContent, Infos, Tags } from './styles'
 
-interface CardItemProps {
-  type: 'experience' | 'project'
+interface CustomDate {
+  month: number
+  year: number
 }
 
-export function CardItem({ type }: CardItemProps) {
+interface AdditionalLink {
+  title: string
+  url: string
+  type: string
+}
+
+export interface Experience {
+  id: string
+  startMonthYear: CustomDate
+  endMonthYear: CustomDate | null
+  title: string
+  companyName: string | null
+  link: string | null
+  location: {
+    countryCode: string
+    postalCode: string
+  } | null
+  locationName: 'Presencial' | 'Híbrida' | 'Remota' | null
+  description: string[] | null
+  additionalLinks: AdditionalLink[] | null
+  skills: string[] | null
+}
+
+export interface Project {
+  id: string
+  imagePath: string
+  title: string
+  link: string | null
+  description: string[] | null
+  additionalLinks: AdditionalLink[] | null
+  tags: string[] | null
+}
+
+type CardItemProps =
+  | {
+      type: 'experience'
+      data: Experience
+    }
+  | {
+      type: 'project'
+      data: Project
+    }
+
+export function CardItem(props: CardItemProps) {
+  const { type, data } = props
+  const { title, link, description, additionalLinks } = data
+
+  let headingTitle = title
+  if (type === 'experience' && data.companyName !== null) {
+    headingTitle += ` · ${data.companyName}`
+  }
+
+  const hasLink = link !== null
+  const hasDescription = description !== null
+  const hasAdditionalLinks = additionalLinks !== null
+
+  const tags = type === 'experience' ? data.skills : data.tags
+  const hasTags = tags !== null
+
   return (
     <CardItemContainer>
       <CardItemContent {...(type === 'project' && { type })}>
-        <header>
-          {type === 'experience' ? (
-            <span>mês de ano &mdash; mês de ano</span>
-          ) : (
-            <Image src="" alt="" width={200} height={112.5} />
-          )}
-        </header>
+        <HeaderCardItem {...props} />
 
         <div>
-          <Heading>
-            <Link
-              href="https://project.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Cargo &middot; Empresa{' '}
-              <span className="icon">
-                <ExternalLinkIcon />
-              </span>
-              <span className="hoverable"></span>
-            </Link>
-
-            <p>Cidade, Estado, País &middot; Tipo</p>
-          </Heading>
+          <HeadingCardItem {...props}>
+            {hasLink ? (
+              <Link href={link} target="_blank" rel="noopener noreferrer">
+                {headingTitle}
+                <span className="icon">
+                  <ExternalLinkIcon />
+                </span>
+                <span className="hoverable"></span>
+              </Link>
+            ) : (
+              <span>{headingTitle}</span>
+            )}
+          </HeadingCardItem>
 
           <Infos>
-            <div>
-              <p>Descrição da experiência.</p>
-              <p>Descrição da experiência.</p>
-              <p>Descrição da experiência.</p>
-              <p>Descrição da experiência.</p>
-            </div>
+            {hasDescription && (
+              <div>
+                {description.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
+            )}
 
-            <ul>
-              <li>
-                <Link
-                  href="https://link.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Link1Icon /> Link
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://link.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Link1Icon /> Link
-                </Link>
-              </li>
-            </ul>
+            {hasAdditionalLinks && (
+              <ul>
+                {additionalLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Link1Icon /> {link.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </Infos>
 
-          <Tags>
-            <li>
-              <span>Conteúdo</span>
-            </li>
-            <li>
-              <span>Conteúdo</span>
-            </li>
-            <li>
-              <span>Conteúdo</span>
-            </li>
-            <li>
-              <span>Conteúdo</span>
-            </li>
-          </Tags>
+          {hasTags && (
+            <Tags>
+              {tags.map((tag, index) => (
+                <li key={index}>
+                  <span>{tag}</span>
+                </li>
+              ))}
+            </Tags>
+          )}
         </div>
       </CardItemContent>
     </CardItemContainer>
