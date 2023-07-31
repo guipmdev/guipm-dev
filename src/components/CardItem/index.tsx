@@ -1,4 +1,4 @@
-import { ExternalLinkIcon, Link1Icon } from '@radix-ui/react-icons'
+import { ExternalLinkIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 
 import { icons } from '@/libs/radixIcons'
@@ -15,9 +15,9 @@ interface CustomDate {
 type LinkType = typeof icons
 
 interface Link {
+  type: keyof LinkType
   title: string
   url: string
-  type: keyof LinkType
 }
 
 export interface Experience {

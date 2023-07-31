@@ -7,13 +7,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import guipmdevLogo from '@/assets/guipmdev-logo.svg'
+import { icons } from '@/libs/radixIcons'
 
 import { Navbar } from '../Navbar'
 import { AsideHeaderContainer, Bio, SocialLinks } from './styles'
 
+type LinkType = typeof icons
+
+interface Link {
+  type: keyof LinkType
+  title: string
+  url: string
+}
 interface Profile {
   headline: string
-  links: Record<'github' | 'linkedin' | 'email', string>
+  links: Link[]
 }
 
 async function getProfile(): Promise<Profile> {
@@ -29,6 +37,10 @@ async function getProfile(): Promise<Profile> {
 export async function AsideHeader() {
   const profile = await getProfile()
 
+  const { headline, links } = profile
+
+  const hasLinks = links.length > 0
+
   return (
     <AsideHeaderContainer>
       <Bio>
@@ -43,45 +55,31 @@ export async function AsideHeader() {
           </div>
         </div>
 
-        <p>{profile.headline}</p>
+        <p>{headline}</p>
       </Bio>
 
       <Navbar />
 
-      <SocialLinks>
-        <li>
-          <Link
-            href={profile.links.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="GitHub"
-          >
-            <GitHubLogoIcon width={24} height={24} />
-          </Link>
-        </li>
+      {hasLinks && (
+        <SocialLinks>
+          {links.map((link, index) => {
+            const Icon = icons[link.type]
 
-        <li>
-          <Link
-            href={profile.links.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="LinkedIn"
-          >
-            <LinkedInLogoIcon width={24} height={24} />
-          </Link>
-        </li>
-
-        <li>
-          <Link
-            href={profile.links.email}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="E-mail"
-          >
-            <EnvelopeClosedIcon width={24} height={24} />
-          </Link>
-        </li>
-      </SocialLinks>
+            return (
+              <li key={index}>
+                <Link
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={link.title}
+                >
+                  <Icon width={24} height={24} />
+                </Link>
+              </li>
+            )
+          })}
+        </SocialLinks>
+      )}
     </AsideHeaderContainer>
   )
 }
