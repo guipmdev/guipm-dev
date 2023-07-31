@@ -30,9 +30,9 @@ export function useMouseEvent() {
     toggleCursorVisibility('0%')
   }, [])
 
-  const toggleGradientDisplay = useCallback(
-    (display: 'none' | 'flex') => {
-      if (cursorRef?.current) cursorRef.current.style.display = display
+  const toggleOpacity = useCallback(
+    (opacity: '0%' | '100%') => {
+      if (cursorRef?.current) cursorRef.current.style.opacity = opacity
     },
     [cursorRef],
   )
@@ -44,7 +44,7 @@ export function useMouseEvent() {
       document.addEventListener('mouseenter', mouseEnterEvent)
       document.addEventListener('mouseleave', mouseLeaveEvent)
 
-      toggleGradientDisplay('flex')
+      toggleOpacity('100%')
     }
 
     return () => {
@@ -53,9 +53,9 @@ export function useMouseEvent() {
       document.removeEventListener('mouseenter', mouseEnterEvent)
       document.removeEventListener('mouseleave', mouseLeaveEvent)
 
-      toggleGradientDisplay('none')
+      toggleOpacity('0%')
     }
-  }, [isMounted, mouseEnterEvent, mouseLeaveEvent, toggleGradientDisplay])
+  }, [isMounted, mouseEnterEvent, mouseLeaveEvent, toggleOpacity])
 
   return { mousePosition, cursorRef }
 }

@@ -2,37 +2,41 @@ import { styled } from '@/styled-system/jsx'
 
 export const CursorContainer = styled('div', {
   base: {
-    position: 'fixed',
-    inset: 0,
-    zIndex: 10,
-
     display: 'none',
-    justifyContent: 'center',
-    alignItems: 'center',
 
-    pointerEvents: 'none',
+    lg: {
+      position: 'fixed',
+      inset: 0,
+      zIndex: 10,
 
-    transform: 'translate(-50%, -50%)',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
 
-    transition: 'opacity 0.2s',
+      transform: 'translate(-50%, -50%)',
 
-    '&.hover': {
-      '& .dottedOutline': {
-        width: '28px',
-        height: '28px',
-      },
+      transition: 'opacity 0.2s',
 
-      '& .outline': {
-        transform: 'scale(0%)',
-      },
+      pointerEvents: 'none',
 
-      '& .dot': {
-        width: '18px',
-        height: '18px',
+      '&.hover': {
+        '& .dottedOutline': {
+          width: '28px',
+          height: '28px',
+        },
 
-        borderColor: 'title',
+        '& .outline': {
+          transform: 'scale(0%)',
+        },
 
-        backgroundColor: 'cursor',
+        '& .dot': {
+          width: '18px',
+          height: '18px',
+
+          borderColor: 'title',
+
+          backgroundColor: 'cursor',
+        },
       },
     },
   },
