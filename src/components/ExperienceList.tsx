@@ -3,7 +3,9 @@ import { CardList } from '@/theme/recipes/cardListRecipe'
 import { CardItem, Experience } from './CardItem'
 
 async function getExperiences(): Promise<Experience[]> {
-  const response = await fetch(`${process.env.API_BASE_URL}/experiences`)
+  const response = await fetch(
+    `${process.env.API_BASE_URL}/experiences?_sort=id&_order=desc&_limit=2`,
+  )
 
   if (!response.ok) {
     throw new Error('Failed to fetch data')
