@@ -41,8 +41,8 @@ export function useMouseEvent() {
     if (isMounted()) {
       window.addEventListener('mousemove', updateMousePosition)
 
-      document.addEventListener('mouseenter', mouseEnterEvent)
-      document.addEventListener('mouseleave', mouseLeaveEvent)
+      document.documentElement.addEventListener('mouseenter', mouseEnterEvent)
+      document.documentElement.addEventListener('mouseleave', mouseLeaveEvent)
 
       toggleOpacity('100%')
     }
@@ -50,8 +50,14 @@ export function useMouseEvent() {
     return () => {
       window.removeEventListener('mousemove', updateMousePosition)
 
-      document.removeEventListener('mouseenter', mouseEnterEvent)
-      document.removeEventListener('mouseleave', mouseLeaveEvent)
+      document.documentElement.removeEventListener(
+        'mouseenter',
+        mouseEnterEvent,
+      )
+      document.documentElement.removeEventListener(
+        'mouseleave',
+        mouseLeaveEvent,
+      )
 
       toggleOpacity('0%')
     }
