@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { IconType } from 'react-icons'
 
 import guipmdevLogo from '@/assets/guipmdev-logo.svg'
 import { icons } from '@/libs/reactIcons'
@@ -49,7 +50,7 @@ export async function AsideHeader() {
       {hasLinks && (
         <SocialLinks>
           {links.map((link, index) => {
-            const Icon = icons[link.type]
+            const Icon: IconType = icons[link.type]
 
             return (
               <li key={index}>
@@ -59,7 +60,7 @@ export async function AsideHeader() {
                   rel="noopener noreferrer"
                   title={link.title}
                 >
-                  <Icon width={24} height={24} />
+                  <Icon size={24} />
                 </Link>
               </li>
             )

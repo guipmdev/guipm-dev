@@ -36,9 +36,6 @@ export const CustomLink = styled(Link, {
 
       display: 'inline',
 
-      width: '11px',
-      height: 'auto',
-
       marginLeft: '0.25rem',
 
       transition: 'transform 0.2s',

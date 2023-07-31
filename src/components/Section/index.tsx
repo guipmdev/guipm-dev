@@ -31,7 +31,7 @@ export function Section({ id, title, link, children, ...rest }: SectionProps) {
             rel: 'noopener noreferrer',
           })}
         >
-          <span>{link.text}</span> <RxArrowRight />
+          <span>{link.text}</span> <RxArrowRight size={12} />
         </CustomLink>
       )}
     </SectionContainer>

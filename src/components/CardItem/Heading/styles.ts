@@ -24,9 +24,6 @@ export const HeadingCardItemContainer = styled('h3', {
         '& svg': {
           position: 'absolute',
 
-          width: '0.5rem',
-          height: 'auto',
-
           transition: 'transform 0.2s',
         },
       },

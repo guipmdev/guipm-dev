@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { IconType } from 'react-icons'
 import { RxExternalLink } from 'react-icons/rx'
 
 import { icons } from '@/libs/reactIcons'
@@ -84,7 +85,7 @@ export function CardItem(props: CardItemProps) {
               <Link href={link} target="_blank" rel="noopener noreferrer">
                 {headingTitle}
                 <span className="icon">
-                  <RxExternalLink />
+                  <RxExternalLink size={9} />
                 </span>
                 <span className="hoverable"></span>
               </Link>
@@ -105,7 +106,7 @@ export function CardItem(props: CardItemProps) {
             {hasAdditionalLinks && (
               <ul>
                 {additionalLinks.map((link, index) => {
-                  const Icon = icons[link.type]
+                  const Icon: IconType = icons[link.type]
 
                   return (
                     <li key={index}>
@@ -114,7 +115,7 @@ export function CardItem(props: CardItemProps) {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <Icon /> {link.title}
+                        <Icon size={12} /> {link.title}
                       </Link>
                     </li>
                   )
