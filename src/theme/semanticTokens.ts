@@ -21,7 +21,10 @@ export const semanticTokens = defineSemanticTokens({
     title: { value: '{colors.slateDark.slate12}' },
     subtitle: { value: '{colors.slateDark.slate10}' },
 
-    gridLines: { value: '{colors.slateDarkA.slateA2/75}' },
+    gridLines: {
+      small: { value: '{colors.slateDarkA.slateA2/35}' },
+      big: { value: '{colors.slateDarkA.slateA2/75}' },
+    },
 
     cursorGradient: { value: '{colors.slateDarkA.slateA2/50}' },
     cursor: { value: '{colors.slateDarkA.slateA12/30}' },
@@ -29,8 +32,14 @@ export const semanticTokens = defineSemanticTokens({
 
   gradients: {
     grid: {
-      value: `linear-gradient({colors.gridLines} 1px, transparent 1px),
-          linear-gradient(to right, {colors.gridLines} 1px, transparent 1px)`,
+      small: {
+        value: `linear-gradient({colors.gridLines.small} 1px, transparent 1px),
+          linear-gradient(to right, {colors.gridLines.small} 1px, transparent 1px)`,
+      },
+      big: {
+        value: `linear-gradient({colors.gridLines.big} 1px, transparent 1px),
+          linear-gradient(to right, {colors.gridLines.big} 1px, transparent 1px)`,
+      },
     },
     cursor: {
       value: 'radial-gradient(300px, {colors.cursorGradient}, transparent 80%)',
