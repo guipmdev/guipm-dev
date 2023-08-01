@@ -23,6 +23,8 @@ export const CursorContainer = styled('div', {
         '& .dottedOutline': {
           width: '28px',
           height: '28px',
+
+          animationDirection: 'reverse',
         },
 
         '& .outline': {
