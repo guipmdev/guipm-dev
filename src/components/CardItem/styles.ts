@@ -28,7 +28,7 @@ export const CardItemContainer = styled('li', {
 
         boxShadow: 'card',
 
-        backdropFilter: 'blur(8px)',
+        backdropFilter: 'blur(4px)',
 
         transition: 'opacity 0.2s',
 
