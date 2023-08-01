@@ -1,6 +1,7 @@
 import { defineConfig } from '@pandacss/dev'
 
 import { globalCss } from '@/theme/globalCss'
+import { keyframes } from '@/theme/keyframes'
 import { semanticTokens } from '@/theme/semanticTokens'
 import { textStyles } from '@/theme/textStyles'
 import { tokens } from '@/theme/tokens'
@@ -21,6 +22,7 @@ export default defineConfig({
       tokens,
       semanticTokens,
       textStyles,
+      keyframes,
     },
   },
 

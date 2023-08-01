@@ -38,6 +38,34 @@ export const Bio = styled('div', {
 
       color: 'title',
 
+      cursor: 'default',
+
+      '&:hover': {
+        '& img': {
+          transform: 'rotate(-15deg) scale(105%)',
+        },
+
+        '& h1::before': {
+          visibility: 'visible',
+
+          left: '1px',
+
+          textShadow: '-1px 0 red',
+
+          animation: 'glitchAnimation1 2s infinite linear 0s alternate-reverse',
+        },
+
+        '& h1::after': {
+          opacity: '100%',
+
+          left: '-1px',
+
+          textShadow: '-1px 0 blue',
+
+          animation: 'glitchAnimation2 2s infinite linear 0s alternate-reverse',
+        },
+      },
+
       sm: {
         margin: '0 0 1rem',
         width: '100%',
@@ -55,18 +83,32 @@ export const Bio = styled('div', {
           width: '4.0625rem',
           height: 'auto',
         },
-
-        '&:hover': {
-          transform: 'rotate(-22.5deg)',
-        },
       },
 
       '& h1': {
+        position: 'relative',
+
         textStyle: {
           base: '3xl',
           sm: '5xl',
         },
         fontWeight: 'black',
+
+        animation: 'glitchAnimation1 2s infinite linear 0s alternate-reverse',
+
+        '&::before, &::after': {
+          position: 'absolute',
+          inset: 0,
+
+          width: '100%',
+          height: '100%',
+
+          content: '"GUIPM.DEV"',
+
+          overflow: 'hidden',
+
+          visibility: 'hidden',
+        },
       },
 
       '& strong': {

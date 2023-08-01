@@ -32,7 +32,7 @@ export async function AsideHeader() {
     <AsideHeaderContainer>
       <Bio>
         <div className="logo">
-          <Image src={guipmdevLogo} alt="" />
+          <Image src={guipmdevLogo} alt="" title="Logotipo por graphitepoint" />
 
           <div>
             <h1>GUIPM.DEV</h1>
