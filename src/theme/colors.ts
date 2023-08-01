@@ -36,7 +36,7 @@ export const colors = defineTokens.colors({
 
   slateDarkA: {
     'slateA10/0': { value: createTransparentColor(slateDark.slate10, 0) },
-    'slateA4/20': { value: createTransparentColor(slateDark.slate4, 20) },
+    'slateA4/25': { value: createTransparentColor(slateDark.slate4, 25) },
     'slateA4/50': { value: createTransparentColor(slateDark.slate4, 50) },
     'slateA12/30': { value: createTransparentColor(slateDark.slate12, 30) },
     'slateA12/10': { value: createTransparentColor(slateDark.slate12, 10) },

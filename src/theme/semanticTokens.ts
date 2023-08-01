@@ -7,7 +7,7 @@ export const semanticTokens = defineSemanticTokens({
 
     background: { value: '{colors.slateDark.slate1}' },
     sectionTitleBackground: { value: '{colors.slateDarkA.slateA1/50}' },
-    cardBackground: { value: '{colors.slateDarkA.slateA4/20}' },
+    cardBackground: { value: '{colors.slateDarkA.slateA4/25}' },
 
     imageBorder: {
       base: { value: '{colors.slateDarkA.slateA12/10}' },
