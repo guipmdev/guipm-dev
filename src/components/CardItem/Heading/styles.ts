@@ -1,6 +1,6 @@
 import { styled } from '@/styled-system/jsx'
 
-export const HeadingCardItemContainer = styled('h3', {
+export const HeadingCardItemContainer = styled('h2', {
   base: {
     '& a': {
       display: 'flex',

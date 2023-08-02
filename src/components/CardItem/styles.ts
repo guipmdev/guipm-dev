@@ -40,7 +40,7 @@ export const CardItemContainer = styled('li', {
           opacity: '100%',
         },
 
-        '& h3 a': {
+        '& h2 a': {
           color: 'primary',
 
           '& span svg': {
