@@ -1,5 +1,6 @@
 import '../styles/panda.css'
 
+import { Analytics } from '@vercel/analytics/react'
 import { seoConfig } from 'seo.config'
 
 import { Background } from '@/components/Background'
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <BodyContent>{children}</BodyContent>
 
         <Background />
+        <Analytics />
       </body>
     </html>
   )
