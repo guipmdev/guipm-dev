@@ -106,11 +106,11 @@ export const colors = defineTokens.colors({
       baseColor: slateDark.slate12,
       transparencyLevel: 30,
     },
-  ].reduce((acc, colorInfos) => {
-    const { colorName, baseColor, transparencyLevel } = colorInfos
+  ].reduce((colors, currentColor) => {
+    const { colorName, baseColor, transparencyLevel } = currentColor
 
     return {
-      ...acc,
+      ...colors,
       [colorName]: {
         value: createRadixColorWithTransparency(baseColor, transparencyLevel),
       },
