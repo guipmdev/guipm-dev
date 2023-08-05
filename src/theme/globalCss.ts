@@ -8,7 +8,6 @@ export const globalCss = defineGlobalStyles({
     lineHeight: '1.5rem',
 
     scrollBehavior: 'smooth',
-
     lg: {
       scrollPaddingTop: '6rem',
     },
@@ -24,7 +23,7 @@ export const globalCss = defineGlobalStyles({
     backgroundColor: 'background',
 
     width: '100vw',
-    minHeight: '100vh',
     maxWidth: '100%',
+    minHeight: '100vh',
   },
 })
