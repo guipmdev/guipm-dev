@@ -9,17 +9,17 @@ export const semanticTokens = defineSemanticTokens({
     sectionTitleBackground: { value: '{colors.slateDarkA.slateA1/50}' },
     cardBackground: { value: '{colors.slateDarkA.slateA4/25}' },
 
+    cardTopBorder: {
+      value: '{colors.slateDarkA.slateA11/10}',
+    },
     imageBorder: {
       base: { value: '{colors.slateDarkA.slateA12/10}' },
       hover: { value: '{colors.slateDarkA.slateA12/30}' },
     },
-    cardTopBorder: {
-      value: '{colors.slateDarkA.slateA11/10}',
-    },
 
-    text: { value: '{colors.slateDark.slate11}' },
     title: { value: '{colors.slateDark.slate12}' },
     subtitle: { value: '{colors.slateDark.slate10}' },
+    text: { value: '{colors.slateDark.slate11}' },
 
     gridLines: {
       small: { value: '{colors.slateDarkA.slateA2/35}' },
@@ -34,11 +34,11 @@ export const semanticTokens = defineSemanticTokens({
     grid: {
       small: {
         value: `linear-gradient({colors.gridLines.small} 1px, transparent 1px),
-          linear-gradient(to right, {colors.gridLines.small} 1px, transparent 1px)`,
+                linear-gradient(to right, {colors.gridLines.small} 1px, transparent 1px)`,
       },
       big: {
         value: `linear-gradient({colors.gridLines.big} 1px, transparent 1px),
-          linear-gradient(to right, {colors.gridLines.big} 1px, transparent 1px)`,
+                linear-gradient(to right, {colors.gridLines.big} 1px, transparent 1px)`,
       },
     },
     cursor: {
