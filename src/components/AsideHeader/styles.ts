@@ -33,56 +33,30 @@ export const Bio = styled('div', {
       alignItems: 'center',
       gap: '1rem',
 
-      margin: '0 auto 1rem',
       width: 'fit-content',
+
+      margin: '0 auto 1rem',
 
       color: 'title',
 
       cursor: 'default',
 
-      '&:hover': {
-        '& img': {
-          transform: 'rotate(-15deg) scale(105%)',
-        },
-
-        '& h1::before': {
-          visibility: 'visible',
-
-          left: '1px',
-
-          textShadow: '-1px 0 red',
-
-          animation: 'glitchAnimation1 2s infinite linear 0s alternate-reverse',
-        },
-
-        '& h1::after': {
-          opacity: '100%',
-
-          left: '-1px',
-
-          textShadow: '-1px 0 blue',
-
-          animation: 'glitchAnimation2 2s infinite linear 0s alternate-reverse',
-        },
-      },
-
       sm: {
-        margin: '0 0 1rem',
         width: '100%',
+
+        margin: '0 0 1rem',
       },
 
       '& img': {
-        width: '2.8125rem',
+        width: {
+          base: '2.8125rem',
+          sm: '4.0625rem',
+        },
         height: 'auto',
 
         transform: 'rotate(0deg)',
 
         transition: 'transform 1s',
-
-        sm: {
-          width: '4.0625rem',
-          height: 'auto',
-        },
       },
 
       '& h1': {
@@ -97,17 +71,16 @@ export const Bio = styled('div', {
         animation: 'glitchAnimation1 2s infinite linear 0s alternate-reverse',
 
         '&::before, &::after': {
+          visibility: 'hidden',
+
           position: 'absolute',
           inset: 0,
 
+          overflow: 'hidden',
           width: '100%',
           height: '100%',
 
           content: '"GUIPM.DEV"',
-
-          overflow: 'hidden',
-
-          visibility: 'hidden',
         },
       },
 
@@ -121,6 +94,32 @@ export const Bio = styled('div', {
 
         '& span': {
           color: 'primary',
+        },
+      },
+
+      '&:hover': {
+        '& img': {
+          transform: 'rotate(-15deg) scale(105%)',
+        },
+
+        '& h1::before': {
+          visibility: 'visible',
+
+          left: '1px',
+
+          textShadow: '-1px 0 red',
+
+          animation: 'glitchAnimation1 2s infinite linear 0s',
+        },
+
+        '& h1::after': {
+          visibility: 'visible',
+
+          left: '-1px',
+
+          textShadow: '-1px 0 blue',
+
+          animation: 'glitchAnimation2 2s infinite linear 0s',
         },
       },
     },
