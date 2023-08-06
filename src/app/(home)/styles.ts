@@ -3,10 +3,9 @@ import { styled } from '@/styled-system/jsx'
 export const HomeContainer = styled('div', {
   base: {
     display: 'grid',
-    gridTemplate: {
-      base: 'auto / auto',
-      lg: `"a b" auto
-           "c c" auto / minmax(420px, 40%) 1fr`,
+    lg: {
+      gridTemplate: `"a b" auto
+                     "c c" auto / minmax(420px, 40%) 1fr`,
     },
     rowGap: '1rem',
     columnGap: '2rem',
@@ -16,7 +15,6 @@ export const HomeContainer = styled('div', {
       display: 'flex',
       flexDirection: 'column',
       gap: '6rem',
-      gridArea: 'auto',
 
       paddingBottom: '5rem',
 
@@ -27,17 +25,14 @@ export const HomeContainer = styled('div', {
     },
 
     '& footer': {
-      gridArea: {
-        base: 'auto',
-        lg: 'c',
-      },
+      lg: { gridArea: 'c' },
 
       textAlign: 'center',
 
       '& p:first-child': {
-        textStyle: 'sm',
-
         marginBottom: '0.5rem',
+
+        textStyle: 'sm',
       },
 
       '& p:last-child': {

@@ -45,6 +45,7 @@ export default function Home() {
         <p>
           Design e desenvolvimento feito com 💙 por <strong>guipm.dev</strong>.
         </p>
+
         <p>
           Inspirado em{' '}
           <Link
