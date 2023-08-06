@@ -1,4 +1,5 @@
-import { CardItem, Project } from '@/components/CardItem'
+import { CardItem } from '@/components/CardItem'
+import { Project } from '@/interfaces/cardItem'
 import { api } from '@/libs/wretch'
 import { CardList } from '@/theme/recipes/cardListRecipe'
 
