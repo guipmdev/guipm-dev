@@ -49,8 +49,8 @@ export function Cursor() {
     <CursorContainer
       ref={cursorRef}
       style={{
-        top: mousePosition.y + 'px',
-        left: mousePosition.x + 'px',
+        top: `${mousePosition.y}px`,
+        left: `${mousePosition.x}px`,
       }}
     >
       <DottedOutline className="dottedOutline"></DottedOutline>

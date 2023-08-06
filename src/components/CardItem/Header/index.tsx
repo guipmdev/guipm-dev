@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
-import { Experience, Project } from '..'
+import { Experience, Project } from '@/interfaces/cardItem'
+
 import { HeaderCardItemContainer } from './styles'
 
 type HeaderCardItemProps =
@@ -17,13 +18,15 @@ function getMonthName(monthNumber: number) {
 export function HeaderCardItem({ type, data }: HeaderCardItemProps) {
   switch (type) {
     case 'experience': {
-      let headerContent = `${getMonthName(data.startMonthYear.month)} de ${
-        data.startMonthYear.year
+      const { startMonthYear, endMonthYear } = data
+
+      let headerContent = `${getMonthName(startMonthYear.month)} de ${
+        startMonthYear.year
       }`
 
-      if (data.endMonthYear !== null) {
-        headerContent += ` — ${getMonthName(data.endMonthYear.month)} de ${
-          data.endMonthYear.year
+      if (endMonthYear !== null) {
+        headerContent += ` — ${getMonthName(endMonthYear.month)} de ${
+          endMonthYear.year
         }`
       }
 
@@ -34,16 +37,19 @@ export function HeaderCardItem({ type, data }: HeaderCardItemProps) {
       )
     }
 
-    case 'project':
+    case 'project': {
+      const { imagePath } = data
+
       return (
         <HeaderCardItemContainer>
           <Image
-            src={process.env.API_BASE_URL + data.imagePath}
+            src={process.env.API_BASE_URL + imagePath}
             alt=""
             width={200}
             height={112.5}
           />
         </HeaderCardItemContainer>
       )
+    }
   }
 }

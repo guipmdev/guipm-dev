@@ -32,7 +32,7 @@ export function Navbar() {
           <Link
             href={sectionId}
             className={activeSection === id ? 'active' : ''}
-            key={index}
+            key={id + index}
           >
             <span></span> {text}
           </Link>

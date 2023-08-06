@@ -2,51 +2,12 @@ import Link from 'next/link'
 import { IconType } from 'react-icons'
 import { RxExternalLink } from 'react-icons/rx'
 
+import { Experience, Project } from '@/interfaces/cardItem'
 import { icons } from '@/libs/reactIcons'
 
 import { HeaderCardItem } from './Header'
 import { HeadingCardItem } from './Heading'
 import { CardItemContainer, CardItemContent, Infos, Tags } from './styles'
-
-interface CustomDate {
-  month: number
-  year: number
-}
-
-type LinkType = typeof icons
-
-interface Link {
-  type: keyof LinkType
-  title: string
-  url: string
-}
-
-export interface Experience {
-  id: string
-  startMonthYear: CustomDate
-  endMonthYear: CustomDate | null
-  title: string
-  companyName: string | null
-  link: string | null
-  location: {
-    countryCode: string
-    postalCode: string
-  } | null
-  locationName: 'Presencial' | 'Híbrida' | 'Remota' | null
-  description: string[] | null
-  additionalLinks: Link[] | null
-  skills: string[] | null
-}
-
-export interface Project {
-  id: string
-  imagePath: string
-  title: string
-  link: string | null
-  description: string[] | null
-  additionalLinks: Link[] | null
-  tags: string[] | null
-}
 
 type CardItemProps =
   | {
@@ -84,9 +45,11 @@ export function CardItem(props: CardItemProps) {
             {hasLink ? (
               <Link href={link} target="_blank" rel="noopener noreferrer">
                 {headingTitle}
+
                 <span className="icon">
                   <RxExternalLink size={9} />
                 </span>
+
                 <span className="hoverable"></span>
               </Link>
             ) : (
@@ -98,7 +61,7 @@ export function CardItem(props: CardItemProps) {
             {hasDescription && (
               <div>
                 {description.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
+                  <p key={paragraph + index}>{paragraph}</p>
                 ))}
               </div>
             )}
@@ -109,7 +72,7 @@ export function CardItem(props: CardItemProps) {
                   const Icon: IconType = icons[link.type]
 
                   return (
-                    <li key={index}>
+                    <li key={link.title + index}>
                       <Link
                         href={link.url}
                         target="_blank"
@@ -127,7 +90,7 @@ export function CardItem(props: CardItemProps) {
           {hasTags && (
             <Tags>
               {tags.map((tag, index) => (
-                <li key={index}>
+                <li key={tag + index}>
                   <span>{tag}</span>
                 </li>
               ))}

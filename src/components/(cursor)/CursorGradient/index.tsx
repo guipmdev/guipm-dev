@@ -11,8 +11,8 @@ export function CursorGradient() {
     <CursorGradientContainer
       ref={cursorRef}
       style={{
-        top: mousePosition.y + 'px',
-        left: mousePosition.x + 'px',
+        top: `${mousePosition.y}px`,
+        left: `${mousePosition.x}px`,
       }}
     ></CursorGradientContainer>
   )

@@ -8,8 +8,9 @@ function createRandomGlitchKeyframes(keyframesNumber = 20) {
   return Array(keyframesNumber)
     .fill(null)
     .reduce((keyframes, _current, index, array) => {
-      const progressPercentage =
-        Math.floor(index * (1 / array.length) * 100) + '%'
+      const progressPercentage = `${Math.floor(
+        index * (1 / array.length) * 100,
+      )}%`
 
       const randomizedClippingShape = `rect(${getRandomInt(
         3.5,

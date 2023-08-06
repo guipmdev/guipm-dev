@@ -17,4 +17,6 @@ export const icons = {
 
   // ===== Font Awesome =====
   youtube: FaYoutube,
-} as const
+}
+
+export type Icons = typeof icons
