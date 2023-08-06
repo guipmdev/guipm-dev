@@ -8,9 +8,7 @@ export const globalCss = defineGlobalStyles({
     lineHeight: '1.5rem',
 
     scrollBehavior: 'smooth',
-    lg: {
-      scrollPaddingTop: '6rem',
-    },
+    lg: { scrollPaddingTop: '6rem' },
 
     '& svg, a *:not(.hoverable)': {
       pointerEvents: 'none',

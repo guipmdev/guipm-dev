@@ -15,27 +15,22 @@ export function useMouseEvent() {
 
   const cursorRef = useRef<HTMLDivElement>(null)
 
-  const toggleCursorVisibility = (opacity: '100%' | '0%') => {
-    if (cursorRef?.current) cursorRef.current.style.opacity = opacity
-  }
+  const toggleOpacity = useCallback((visible: boolean) => {
+    if (cursorRef?.current) {
+      cursorRef.current.style.opacity = visible ? '100%' : '0%'
+    }
+  }, [])
 
   const updateMousePosition = (event: MouseEvent) => {
     setMousePosition({ x: event.clientX, y: event.clientY })
   }
 
   const mouseEnterEvent = useCallback(() => {
-    toggleCursorVisibility('100%')
-  }, [])
+    toggleOpacity(true)
+  }, [toggleOpacity])
   const mouseLeaveEvent = useCallback(() => {
-    toggleCursorVisibility('0%')
-  }, [])
-
-  const toggleOpacity = useCallback(
-    (opacity: '0%' | '100%') => {
-      if (cursorRef?.current) cursorRef.current.style.opacity = opacity
-    },
-    [cursorRef],
-  )
+    toggleOpacity(false)
+  }, [toggleOpacity])
 
   useEffect(() => {
     if (isMounted()) {
@@ -44,7 +39,7 @@ export function useMouseEvent() {
       document.documentElement.addEventListener('mouseenter', mouseEnterEvent)
       document.documentElement.addEventListener('mouseleave', mouseLeaveEvent)
 
-      toggleOpacity('100%')
+      toggleOpacity(true)
     }
 
     return () => {
@@ -59,7 +54,7 @@ export function useMouseEvent() {
         mouseLeaveEvent,
       )
 
-      toggleOpacity('0%')
+      toggleOpacity(false)
     }
   }, [isMounted, mouseEnterEvent, mouseLeaveEvent, toggleOpacity])
 

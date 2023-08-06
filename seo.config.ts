@@ -6,10 +6,10 @@ export const seoConfig = defineMetadata({
   title: {
     template: '%s - guipm.dev',
     default:
-      'guipm.dev - Desenvolvedor Full Stack | React.js | Node.js | TypeScript | Express.js | PostgreSQL',
+      'guipm.dev - Desenvolvedor Full Stack | React.js | Node.js | TypeScript | PostgreSQL | Next.js',
   },
   description:
-    'Desenvolvedor Full Stack | React.js | Node.js | TypeScript | Express.js | PostgreSQL',
+    'Desenvolvedor Full Stack | React.js | Node.js | TypeScript | PostgreSQL | Next.js',
   manifest: '/site.webmanifest',
   icons: [
     { rel: 'icon', url: '/favicon.ico' },

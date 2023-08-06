@@ -41,6 +41,7 @@ export const semanticTokens = defineSemanticTokens({
                 linear-gradient(to right, {colors.gridLines.big} 1px, transparent 1px)`,
       },
     },
+
     cursor: {
       value: 'radial-gradient(300px, {colors.cursorGradient}, transparent 80%)',
     },

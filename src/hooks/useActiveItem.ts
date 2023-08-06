@@ -18,7 +18,7 @@ export function useActiveItem(
       { rootMargin: `0% 0% -80% 0%` },
     )
 
-    itemIds?.forEach((id) => {
+    itemIds.forEach((id) => {
       if (!id) {
         return
       }
@@ -30,7 +30,7 @@ export function useActiveItem(
     })
 
     return () => {
-      itemIds?.forEach((id) => {
+      itemIds.forEach((id) => {
         if (!id) {
           return
         }

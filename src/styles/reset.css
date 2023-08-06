@@ -1,8 +1,9 @@
 @layer reset {
-  /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+  /*
+    http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+  */
 
   html,
   body,
@@ -85,13 +86,15 @@
   mark,
   audio,
   video {
-    margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
+    margin: 0;
+
     font: inherit;
+    font-size: 100%;
     vertical-align: baseline;
   }
+
   /* HTML5 display-role reset for older browsers */
   article,
   aside,
@@ -106,17 +109,21 @@
   section {
     display: block;
   }
+
   body {
     line-height: 1;
   }
+
   ol,
   ul {
     list-style: none;
   }
+
   blockquote,
   q {
     quotes: none;
   }
+
   blockquote:before,
   blockquote:after,
   q:before,
@@ -124,6 +131,7 @@
     content: '';
     content: none;
   }
+
   table {
     border-collapse: collapse;
     border-spacing: 0;
