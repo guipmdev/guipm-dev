@@ -56,6 +56,7 @@ export const HeadingCardItemContainer = styled('h2', {
       fontWeight: 'medium',
     },
   },
+
   variants: {
     type: {
       experience: {

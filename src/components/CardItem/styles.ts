@@ -76,6 +76,7 @@ export const CardItemContent = styled('div', {
       gap: '1rem',
     },
   },
+
   variants: {
     type: {
       project: {
