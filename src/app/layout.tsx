@@ -3,8 +3,8 @@ import '../styles/panda.css'
 import { Analytics } from '@vercel/analytics/react'
 import { seoConfig } from 'seo.config'
 
+import { Cursor } from '@/components/(cursor)/Cursor'
 import { Background } from '@/components/Background'
-import { Cursor } from '@/components/Cursor'
 import { fontClassName } from '@/styles/fonts'
 
 import { BodyContent } from './styles'

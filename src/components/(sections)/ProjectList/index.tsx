@@ -1,7 +1,6 @@
+import { CardItem, Project } from '@/components/CardItem'
 import { api } from '@/libs/wretch'
 import { CardList } from '@/theme/recipes/cardListRecipe'
-
-import { CardItem, Project } from './CardItem'
 
 export async function ProjectList() {
   const projects: Project[] = await api

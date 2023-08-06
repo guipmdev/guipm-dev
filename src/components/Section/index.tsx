@@ -1,7 +1,7 @@
 import React, { ComponentPropsWithoutRef } from 'react'
 import { RxArrowRight } from 'react-icons/rx'
 
-import { SectionTitle } from '../SectionTitle'
+import { SectionTitle } from './SectionTitle'
 import { CustomLink, SectionContainer } from './styles'
 
 interface SectionProps extends ComponentPropsWithoutRef<'section'> {

@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
-import { AboutMe } from '@/components/AboutMe'
+import { AboutMe } from '@/components/(sections)/AboutMe'
+import { ExperienceList } from '@/components/(sections)/ExperienceList'
+import { ProjectList } from '@/components/(sections)/ProjectList'
 import { AsideHeader } from '@/components/AsideHeader'
-import { ExperienceList } from '@/components/ExperienceList'
-import { ProjectList } from '@/components/ProjectList'
 import { Section } from '@/components/Section'
 
 import { HomeContainer } from './styles'

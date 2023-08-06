@@ -1,7 +1,6 @@
+import { CardItem, Experience } from '@/components/CardItem'
 import { api } from '@/libs/wretch'
 import { CardList } from '@/theme/recipes/cardListRecipe'
-
-import { CardItem, Experience } from './CardItem'
 
 export async function ExperienceList() {
   const experiences: Experience[] = await api
