@@ -19,13 +19,14 @@ interface Link {
 
 interface Profile {
   headline: string
+  bio: string
   links: Link[]
 }
 
 export async function AsideHeader() {
   const profile: Profile = await api.get('/profile').json()
 
-  const { headline, links } = profile
+  const { bio, links } = profile
 
   const hasLinks = links.length > 0
 
@@ -43,7 +44,7 @@ export async function AsideHeader() {
           </div>
         </div>
 
-        <p>{headline}</p>
+        <p>{bio}</p>
       </Bio>
 
       <Navbar />

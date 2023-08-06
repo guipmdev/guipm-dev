@@ -6,31 +6,38 @@ import { useActiveItem } from '@/hooks/useActiveItem'
 
 import { NavbarContainer } from './styles'
 
+interface SectionInfo {
+  id: string
+  text: string
+}
+
+const sectionInfos: SectionInfo[] = [
+  { id: 'about', text: 'SOBRE' },
+  { id: 'experience', text: 'EXPERIÊNCIA' },
+  { id: 'projects', text: 'PROJETOS' },
+]
+const sectionsIds = sectionInfos.map((sectionInfo) => sectionInfo.id)
+
 export function Navbar() {
-  const activeSection = useActiveItem(
-    ['about', 'experience', 'projects'],
-    'about',
-  )
+  const activeSection = useActiveItem(sectionsIds, sectionsIds[0])
 
   return (
     <NavbarContainer>
-      <Link href="#about" className={activeSection === 'about' ? 'active' : ''}>
-        <span></span> SOBRE
-      </Link>
+      {sectionInfos.map((sectionInfo, index) => {
+        const { id, text } = sectionInfo
 
-      <Link
-        href="#experience"
-        className={activeSection === 'experience' ? 'active' : ''}
-      >
-        <span></span> EXPERIÊNCIA
-      </Link>
+        const sectionId = '#' + id
 
-      <Link
-        href="#projects"
-        className={activeSection === 'projects' ? 'active' : ''}
-      >
-        <span></span> PROJETOS
-      </Link>
+        return (
+          <Link
+            href={sectionId}
+            className={activeSection === id ? 'active' : ''}
+            key={index}
+          >
+            <span></span> {text}
+          </Link>
+        )
+      })}
     </NavbarContainer>
   )
 }
