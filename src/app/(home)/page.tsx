@@ -14,13 +14,13 @@ export default function Home() {
       <AsideHeader />
 
       <main>
-        <Section id="about" title="SOBRE">
+        <Section id="about" sectionTitle="SOBRE">
           <AboutMe />
         </Section>
 
         <Section
           id="experience"
-          title="EXPERIÊNCIA"
+          sectionTitle="EXPERIÊNCIA"
           link={{
             text: 'Ver currículo completo',
             url: 'https://guilhermeprevedamilek.com.br',
@@ -31,7 +31,7 @@ export default function Home() {
 
         <Section
           id="projects"
-          title="PROJETOS"
+          sectionTitle="PROJETOS"
           link={{
             text: 'Ver todos os projetos',
             url: 'https://github.com/guipmdev?tab=repositories',

@@ -6,20 +6,22 @@ import { useIntersectionObserver } from 'usehooks-ts'
 import { SectionTitleContainer } from './styles'
 
 interface SectionTitleProps {
-  id: string
-  title: string
+  sectionId: string
+  sectionTitle: string
 }
 
-export function SectionTitle({ id, title }: SectionTitleProps) {
+export function SectionTitle({ sectionId, sectionTitle }: SectionTitleProps) {
   const ref = useRef<HTMLAnchorElement | null>(null)
   const entry = useIntersectionObserver(ref, {
     threshold: 1,
     rootMargin: '-1px 0px 0px 0px',
   })
-
   const [isPinned, setIsPinned] = useState(false)
 
   const isStickyDetectionReady = !!entry
+
+  const sectionLink = '#' + sectionId
+
   useEffect(() => {
     if (isStickyDetectionReady) {
       const elementVisibilityPercentage = entry.intersectionRatio
@@ -30,12 +32,12 @@ export function SectionTitle({ id, title }: SectionTitleProps) {
 
   return (
     <SectionTitleContainer
+      ref={ref}
+      href={sectionLink}
       className={isPinned ? 'pinned' : undefined}
       isSticky={isStickyDetectionReady}
-      ref={ref}
-      href={`#${id}`}
     >
-      <h2>{title}</h2>
+      <h2>{sectionTitle}</h2>
     </SectionTitleContainer>
   )
 }

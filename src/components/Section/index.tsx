@@ -1,12 +1,12 @@
 import React, { ComponentPropsWithoutRef } from 'react'
 import { RxArrowRight } from 'react-icons/rx'
 
-import { SectionTitle } from './SectionTitle'
 import { CustomLink, SectionContainer } from './styles'
+import { SectionTitle } from './Title'
 
 interface SectionProps extends ComponentPropsWithoutRef<'section'> {
   id: string
-  title: string
+  sectionTitle: string
   link?: {
     text: string
     url: string
@@ -14,19 +14,27 @@ interface SectionProps extends ComponentPropsWithoutRef<'section'> {
   children: React.ReactNode
 }
 
-export function Section({ id, title, link, children, ...rest }: SectionProps) {
-  const externalURL = !!link?.url.includes('https')
+export function Section({
+  id,
+  sectionTitle,
+  link,
+  children,
+  ...rest
+}: SectionProps) {
+  const hasLink = !!link
+
+  const isExternalURL = hasLink && !!link.url.includes('https')
 
   return (
     <SectionContainer id={id} {...rest}>
-      <SectionTitle id={id} title={title} />
+      <SectionTitle sectionId={id} sectionTitle={sectionTitle} />
 
       {children}
 
-      {!!link && (
+      {hasLink && (
         <CustomLink
           href={link.url}
-          {...(externalURL && {
+          {...(isExternalURL && {
             target: '_blank',
             rel: 'noopener noreferrer',
           })}

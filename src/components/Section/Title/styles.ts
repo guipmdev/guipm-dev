@@ -7,10 +7,7 @@ export const SectionTitleContainer = styled(Link, {
     top: 0,
     zIndex: 2,
 
-    display: {
-      base: 'block',
-      lg: 'none',
-    },
+    lg: { display: 'none' },
 
     width: '100%',
 
@@ -26,12 +23,12 @@ export const SectionTitleContainer = styled(Link, {
       bottom: 0,
       zIndex: -1,
 
-      content: '""',
-
       backgroundColor: 'sectionTitleBackground',
       width: 'calc(100% + (1.5rem * 2))',
 
       marginLeft: '-1.5rem',
+
+      content: '""',
 
       backdropFilter: 'blur(8px)',
 

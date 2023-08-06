@@ -16,6 +16,7 @@ interface Link {
   title: string
   url: string
 }
+
 interface Profile {
   headline: string
   links: Link[]

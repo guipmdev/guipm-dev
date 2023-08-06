@@ -26,9 +26,22 @@ export const CustomLink = styled(Link, {
     },
 
     '& span': {
-      borderBottom: '1px solid transparent',
+      position: 'relative',
 
-      transition: 'border-color 0.2s',
+      '&::before': {
+        position: 'absolute',
+        inset: 0,
+
+        width: 0,
+        height: '100%',
+
+        borderBottom: '1px solid',
+        borderColor: 'primary',
+
+        content: '""',
+
+        transition: 'width 0.2s',
+      },
     },
 
     '& svg': {
@@ -42,8 +55,8 @@ export const CustomLink = styled(Link, {
     },
 
     '&:hover': {
-      '& span': {
-        borderBottomColor: 'primary',
+      '& span::before': {
+        width: '100%',
       },
 
       '& svg': {
