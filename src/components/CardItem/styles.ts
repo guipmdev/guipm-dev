@@ -12,10 +12,10 @@ export const CardItemContainer = styled('li', {
       position: 'relative',
 
       '&::before': {
+        opacity: 0,
+
         position: 'absolute',
         inset: '-1.5rem',
-
-        content: '""',
 
         backgroundColor: 'cardBackground',
         width: 'calc(100% + (1.5rem * 2))',
@@ -23,16 +23,16 @@ export const CardItemContainer = styled('li', {
 
         padding: '1.5rem',
         borderTop: '1px solid',
-        borderTopColor: 'cardTopBorder',
+        borderColor: 'cardTopBorder',
         borderRadius: '6px',
 
         boxShadow: 'card',
 
+        content: '""',
+
         backdropFilter: 'blur(4px)',
 
         transition: 'opacity 0.2s',
-
-        opacity: 0,
       },
 
       '&:hover': {
@@ -66,6 +66,7 @@ export const CardItemContent = styled('div', {
     lg: {
       position: 'relative',
       zIndex: 1,
+
       gridTemplateColumns: 'minmax(120px, 20%) 1fr',
     },
 
