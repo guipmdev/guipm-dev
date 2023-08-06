@@ -2,98 +2,86 @@ import { styled } from '@/styled-system/jsx'
 
 export const CursorContainer = styled('div', {
   base: {
-    display: 'none',
+    position: 'fixed',
+    inset: 0,
+    zIndex: 10,
 
-    lg: {
-      position: 'fixed',
-      inset: 0,
-      zIndex: 10,
+    display: {
+      base: 'none',
+      lg: 'flex',
+    },
+    justifyContent: 'center',
+    alignItems: 'center',
 
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
+    transform: 'translate(-50%, -50%)',
 
-      transform: 'translate(-50%, -50%)',
+    transition: 'opacity 0.2s',
 
-      transition: 'opacity 0.2s',
+    pointerEvents: 'none',
 
-      pointerEvents: 'none',
+    '&.hover': {
+      '& .dot': {
+        width: '18px',
+        height: '18px',
 
-      '&.hover': {
-        '& .dottedOutline': {
-          width: '28px',
-          height: '28px',
+        borderColor: 'title',
 
-          animationDirection: 'reverse',
-        },
+        backgroundColor: 'cursor',
+      },
 
-        '& .outline': {
-          transform: 'scale(0%)',
-        },
+      '& .solidOutline': {
+        transform: 'scale(0%)',
+      },
 
-        '& .dot': {
-          width: '18px',
-          height: '18px',
+      '& .dashedOutline': {
+        width: '28px',
+        height: '28px',
 
-          borderColor: 'title',
-
-          backgroundColor: 'cursor',
-        },
+        animationDirection: 'reverse',
       },
     },
   },
 })
 
-export const DottedOutline = styled('span', {
+export const CursorPart = styled('span', {
   base: {
     position: 'absolute',
 
     display: 'block',
 
-    border: '1px dashed',
-    borderColor: 'subtitle',
     borderRadius: '50%',
 
-    width: '105px',
-    height: '105px',
+    '&.dot': {
+      backgroundColor: 'subtitle',
+      width: '8px',
+      height: '8px',
 
-    transition: 'width 0.75s, height 0.75s',
+      border: '2px solid transparent',
 
-    animation: 'spin 15s infinite linear',
-  },
-})
+      transition:
+        'width 0.5s, height 0.5s, border-color 0.5s, background-color 0.5s',
+    },
 
-export const Outline = styled('span', {
-  base: {
-    position: 'absolute',
+    '&.solidOutline': {
+      border: '1px solid',
+      borderColor: 'subtitle',
 
-    display: 'block',
+      width: '85px',
+      height: '85px',
 
-    border: '1px solid',
-    borderColor: 'subtitle',
-    borderRadius: '50%',
+      transition: 'transform 0.75s',
+    },
 
-    width: '85px',
-    height: '85px',
+    '&.dashedOutline': {
+      width: '105px',
+      height: '105px',
 
-    transition: 'transform 0.75s',
-  },
-})
+      border: '1px dashed',
+      borderColor: 'subtitle',
 
-export const Dot = styled('span', {
-  base: {
-    position: 'absolute',
+      transition: 'width 0.75s, height 0.75s',
 
-    display: 'block',
-
-    backgroundColor: 'subtitle',
-    border: '2px solid transparent',
-    borderRadius: '50%',
-
-    width: '8px',
-    height: '8px',
-
-    transition:
-      'width 0.5s, height 0.5s, border-color 0.5s, background-color 0.5s',
+      animation: 'spin 15s infinite linear',
+    },
   },
 })

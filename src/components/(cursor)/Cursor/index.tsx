@@ -5,7 +5,7 @@ import { useIsMounted } from 'usehooks-ts'
 
 import { useMouseEvent } from '@/hooks/useMouseEvent'
 
-import { CursorContainer, Dot, DottedOutline, Outline } from './styles'
+import { CursorContainer, CursorPart } from './styles'
 
 const hoverableTags = ['A', 'BUTTON']
 const classNameEventTrigger = 'hoverable'
@@ -53,9 +53,9 @@ export function Cursor() {
         left: `${mousePosition.x}px`,
       }}
     >
-      <DottedOutline className="dottedOutline"></DottedOutline>
-      <Outline className="outline"></Outline>
-      <Dot className="dot"></Dot>
+      <CursorPart className="dot" />
+      <CursorPart className="solidOutline" />
+      <CursorPart className="dashedOutline" />
     </CursorContainer>
   )
 }
