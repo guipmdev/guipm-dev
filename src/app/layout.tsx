@@ -24,6 +24,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <BodyContent>{children}</BodyContent>
 
         <Background />
+
         <Analytics />
       </body>
     </html>

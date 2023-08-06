@@ -38,17 +38,17 @@ export const HomeContainer = styled('div', {
       '& p:last-child': {
         color: 'subtitle',
         textStyle: 'xs',
-      },
 
-      '& strong': {
-        fontWeight: 'medium',
-      },
+        '& strong': {
+          fontWeight: 'medium',
+        },
 
-      '& a': {
-        transition: 'color 0.2s',
+        '& a': {
+          transition: 'color 0.2s',
 
-        '&:hover': {
-          color: 'text',
+          '&:hover': {
+            color: 'text',
+          },
         },
       },
     },
