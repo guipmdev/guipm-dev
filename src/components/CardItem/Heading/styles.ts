@@ -55,10 +55,15 @@ export const HeadingCardItemContainer = styled('h2', {
       color: 'title',
       fontWeight: 'medium',
     },
-
-    '& p': {
-      color: 'subtitle',
-      fontWeight: 'medium',
+  },
+  variants: {
+    type: {
+      experience: {
+        '& p': {
+          color: 'subtitle',
+          fontWeight: 'medium',
+        },
+      },
     },
   },
 })

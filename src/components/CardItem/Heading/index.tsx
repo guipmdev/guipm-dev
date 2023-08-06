@@ -83,31 +83,33 @@ export async function HeadingCardItem({
 }: HeadingCardItemProps) {
   switch (type) {
     case 'experience': {
+      const { location, locationName } = data
+
       const headingSubtitleArray = []
 
-      if (data.location) {
+      if (location) {
         const detailedLocation: Location = await wretch(
-          `https://viacep.com.br/ws/${data.location.postalCode}/json`,
+          `https://viacep.com.br/ws/${location.postalCode}/json`,
         )
           .get()
           .json()
 
         const headingLocation = `${detailedLocation.localidade}, ${getStateName(
           detailedLocation.uf,
-        )}, ${getCountryName(data.location.countryCode)}`
+        )}, ${getCountryName(location.countryCode)}`
 
         headingSubtitleArray.push(headingLocation)
       }
 
       if (data.locationName) {
-        headingSubtitleArray.push(data.locationName)
+        headingSubtitleArray.push(locationName)
       }
 
       const headingSubtitleText = headingSubtitleArray.join(' · ')
       const hasHeadingSubtitle = headingSubtitleText.length > 0
 
       return (
-        <HeadingCardItemContainer>
+        <HeadingCardItemContainer type="experience">
           {children}
 
           {hasHeadingSubtitle && <p>{headingSubtitleText}</p>}

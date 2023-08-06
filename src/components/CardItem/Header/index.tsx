@@ -31,7 +31,7 @@ export function HeaderCardItem({ type, data }: HeaderCardItemProps) {
       }
 
       return (
-        <HeaderCardItemContainer>
+        <HeaderCardItemContainer type="experience">
           <span>{headerContent}</span>
         </HeaderCardItemContainer>
       )
@@ -41,7 +41,7 @@ export function HeaderCardItem({ type, data }: HeaderCardItemProps) {
       const { imagePath } = data
 
       return (
-        <HeaderCardItemContainer>
+        <HeaderCardItemContainer type="project">
           <Image
             src={process.env.API_BASE_URL + imagePath}
             alt=""
