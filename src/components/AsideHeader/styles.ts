@@ -107,7 +107,7 @@ export const Bio = styled('div', {
 
           left: '1px',
 
-          textShadow: '-1px 0 red',
+          textShadow: '1px 0 red',
 
           animation: 'glitchAnimation1 2s infinite linear 0s',
         },

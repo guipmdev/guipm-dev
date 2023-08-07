@@ -1,20 +1,21 @@
 import { defineKeyframes } from '@pandacss/dev'
 
-function getRandomInt(max: number) {
+function getRandomNumber(max: number) {
   return Math.floor(Math.random() * max * 100) / 100
 }
 
-function createRandomGlitchKeyframes(keyframesNumber = 20) {
-  return Array(keyframesNumber)
+function createRandomGlitchKeyframes() {
+  return Array(20)
     .fill(null)
     .reduce((keyframes, _current, index, array) => {
       const progressPercentage = `${Math.floor(
         index * (1 / array.length) * 100,
       )}%`
 
-      const randomizedClippingShape = `rect(${getRandomInt(
-        3.5,
-      )}rem, 18.5rem, ${getRandomInt(3.5)}rem, 0rem)`
+      const randomizedClippingShape = `rect(${getRandomNumber(3.5)}rem,
+                                            18.5rem,
+                                            ${getRandomNumber(3.5)}rem,
+                                            0rem)`
 
       return {
         ...keyframes,
