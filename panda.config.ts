@@ -36,6 +36,6 @@ export default defineConfig({
 
   gitignore: true,
 
-  // minify: true,
-  // hash: true,
+  minify: true,
+  hash: true,
 })
