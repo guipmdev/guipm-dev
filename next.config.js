@@ -17,7 +17,13 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: 'guilhermeprevedamilek.com.br',
+        source: '/:path*)',
+        has: [
+          {
+            type: 'host',
+            value: 'guilhermeprevedamilek.com.br',
+          },
+        ],
         destination: '/curriculo.pdf',
         permanent: true,
       },
