@@ -23,7 +23,7 @@ export default function Home() {
           sectionTitle="EXPERIÊNCIA"
           link={{
             text: 'Ver currículo completo',
-            url: 'https://guilhermeprevedamilek.com.br',
+            url: '/curriculo.pdf',
           }}
         >
           <ExperienceList />
