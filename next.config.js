@@ -13,6 +13,16 @@ const nextConfig = {
       },
     ],
   },
+
+  async redirects() {
+    return [
+      {
+        source: '/curriculo',
+        destination: '/curriculo.pdf',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
