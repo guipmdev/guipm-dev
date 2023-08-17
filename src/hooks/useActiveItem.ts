@@ -19,9 +19,7 @@ export function useActiveItem(
     )
 
     itemIds.forEach((id) => {
-      if (!id) {
-        return
-      }
+      if (!id) return
 
       const element = document.getElementById(id)
       if (element) {
@@ -31,9 +29,7 @@ export function useActiveItem(
 
     return () => {
       itemIds.forEach((id) => {
-        if (!id) {
-          return
-        }
+        if (!id) return
 
         const element = document.getElementById(id)
         if (element) {

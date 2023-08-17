@@ -20,7 +20,7 @@ export function SectionTitle({ sectionId, sectionTitle }: SectionTitleProps) {
 
   const isStickyDetectionReady = !!entry
 
-  const sectionLink = '#' + sectionId
+  const sectionLink = `#${sectionId}`
 
   useEffect(() => {
     if (isStickyDetectionReady) {

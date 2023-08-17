@@ -26,7 +26,7 @@ export function Navbar() {
       {sectionInfos.map((sectionInfo, index) => {
         const { id, text } = sectionInfo
 
-        const sectionId = '#' + id
+        const sectionId = `#${id}`
 
         return (
           <Link
