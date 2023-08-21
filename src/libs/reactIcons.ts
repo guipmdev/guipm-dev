@@ -15,7 +15,6 @@ export const icons = {
   github: RxGithubLogo,
   link: RxLink1,
   linkedin: RxLinkedinLogo,
-  arrowDown: RxChevronDown,
 
   // ===== Font Awesome =====
   youtube: FaYoutube,
