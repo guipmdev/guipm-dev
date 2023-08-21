@@ -64,24 +64,29 @@ export function DescriptionCardItem({ description }: DescriptionCardItemProps) {
 
   useEffect(() => {
     if (divRef?.current) {
-      divRef.current.className = css({
-        maskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)',
-        WebkitMaskImage:
-          'linear-gradient(to bottom, black 50%, transparent 100%)',
-        maskSize: 'auto 200%',
-        WebkitMaskSize: 'auto 200%',
-      })
-
       divRef.current.style.maxHeight = defaultDivMaxHeight
-      divRef.current.style.maskPosition = defaultDivMaskPosition
-      divRef.current.style.setProperty(
-        '-webkit-mask-position',
-        defaultDivMaskPosition,
-      )
 
       setHasOverflow(divRef.current.scrollHeight > divRef.current.clientHeight)
+
+      if (hasOverflow) {
+        divRef.current.className = css({
+          maskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)',
+          WebkitMaskImage:
+            'linear-gradient(to bottom, black 50%, transparent 100%)',
+          maskSize: 'auto 200%',
+          WebkitMaskSize: 'auto 200%',
+        })
+
+        divRef.current.style.maskPosition = defaultDivMaskPosition
+        divRef.current.style.setProperty(
+          '-webkit-mask-position',
+          defaultDivMaskPosition,
+        )
+      } else {
+        divRef.current.style.maxHeight = 'auto'
+      }
     }
-  }, [defaultDivMaxHeight, isMounted])
+  }, [defaultDivMaxHeight, hasOverflow, isMounted])
 
   return (
     <ParagraphCardItemContainer>
