@@ -25,30 +25,5 @@ export const ParagraphCardItemContainer = styled('div', {
         },
       },
     },
-
-    '& button': {
-      position: 'relative',
-
-      padding: '0.5rem',
-      border: '1px solid white',
-      borderColor: 'title',
-      borderRadius: '6px',
-
-      textStyle: 'md',
-      textTransform: 'uppercase',
-      color: 'title',
-
-      cursor: 'pointer',
-
-      transition: 'color 0.2s, background-color 0.2s, margin 0.5s',
-
-      '&:hover': {
-        backgroundColor: 'title',
-
-        borderColor: 'title',
-
-        color: 'background',
-      },
-    },
   },
 })

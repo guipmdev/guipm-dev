@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useIsMounted } from 'usehooks-ts'
 
+import { Button } from '@/components/Button'
 import { css } from '@/styled-system/css'
 
 import { ParagraphCardItemContainer } from './styles'
@@ -23,9 +24,9 @@ export function DescriptionCardItem({ description }: DescriptionCardItemProps) {
   const lineHeightInRem = 1.25
   const initialVisibleLinesNumber = 10
 
-  const defaultMaxHeight = `calc(${lineHeightInRem}rem * ${initialVisibleLinesNumber})`
-  const defaultMaskPosition = 'center 100%'
-  const defaultMarginTop = 'calc((2.625rem + 0.75rem) * -1)'
+  const defaultDivMaxHeight = `calc(${lineHeightInRem}rem * ${initialVisibleLinesNumber})`
+  const defaultDivMaskPosition = 'center 100%'
+  const defaultButtonMarginTop = 'calc((2.625rem + 0.75rem) * -1)'
 
   function handleToggleDescription() {
     if (divRef?.current) {
@@ -39,18 +40,20 @@ export function DescriptionCardItem({ description }: DescriptionCardItemProps) {
       const linesNumber = Math.ceil(divHeightInPx / lineHeightInPx)
 
       divRef.current.style.maxHeight = isExpanded
-        ? defaultMaxHeight
+        ? defaultDivMaxHeight
         : `calc(${lineHeightInRem}rem * ${linesNumber})`
 
       divRef.current.style.maskPosition = isExpanded
-        ? defaultMaskPosition
+        ? defaultDivMaskPosition
         : 'center 0%'
 
       setIsExpanded(!isExpanded)
     }
 
     if (buttonRef?.current) {
-      buttonRef.current.style.marginTop = isExpanded ? defaultMarginTop : '0'
+      buttonRef.current.style.marginTop = isExpanded
+        ? defaultButtonMarginTop
+        : '0'
     }
   }
 
@@ -61,12 +64,12 @@ export function DescriptionCardItem({ description }: DescriptionCardItemProps) {
         maskSize: 'auto 200%',
       })
 
-      divRef.current.style.maxHeight = defaultMaxHeight
-      divRef.current.style.maskPosition = defaultMaskPosition
+      divRef.current.style.maxHeight = defaultDivMaxHeight
+      divRef.current.style.maskPosition = defaultDivMaskPosition
 
       setHasOverflow(divRef.current.scrollHeight > divRef.current.clientHeight)
     }
-  }, [defaultMaxHeight, isMounted])
+  }, [defaultDivMaxHeight, isMounted])
 
   return (
     <ParagraphCardItemContainer>
@@ -81,16 +84,12 @@ export function DescriptionCardItem({ description }: DescriptionCardItemProps) {
       </div>
 
       {hasOverflow && (
-        <button
+        <Button
           onClick={handleToggleDescription}
           ref={buttonRef}
-          className={css({
-            margin: '0 auto',
-            marginTop: defaultMarginTop,
-          })}
-        >
-          {isExpanded ? 'Ocultar' : 'Expandir'}
-        </button>
+          style={{ marginTop: defaultButtonMarginTop }}
+          text={isExpanded ? 'Ocultar' : 'Expandir'}
+        />
       )}
     </ParagraphCardItemContainer>
   )
