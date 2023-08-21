@@ -88,18 +88,6 @@ export const CardItemContent = styled('div', {
 
 export const Infos = styled('div', {
   base: {
-    '& > div': {
-      marginBottom: '0.5rem',
-
-      '& p': {
-        textStyle: 'sm',
-
-        '& + p': {
-          marginTop: '0.25rem',
-        },
-      },
-    },
-
     '& ul': {
       position: 'relative',
 

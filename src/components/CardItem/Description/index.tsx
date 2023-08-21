@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { useIsMounted } from 'usehooks-ts'
 
+import { css, cx } from '@/styled-system/css'
+
 import { ParagraphCardItemContainer } from './styles'
 
 interface DescriptionCardItemProps {
@@ -17,6 +19,16 @@ export function DescriptionCardItem({ description }: DescriptionCardItemProps) {
 
   useEffect(() => {
     if (ref?.current) {
+      ref.current.className = cx(
+        ref.current.className,
+        css({
+          overflow: 'hidden',
+          display: '-webkit-box',
+          WebkitLineClamp: 10,
+          lineClamp: 10,
+        }),
+      )
+
       setHasOverflow(ref.current.scrollHeight > ref.current.clientHeight)
     }
   }, [description, isMounted])
