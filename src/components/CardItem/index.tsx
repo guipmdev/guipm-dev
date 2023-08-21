@@ -5,6 +5,7 @@ import { RxExternalLink } from 'react-icons/rx'
 import { Experience, Project } from '@/interfaces/cardItem'
 import { icons } from '@/libs/reactIcons'
 
+import { DescriptionCardItem } from './Description'
 import { HeaderCardItem } from './Header'
 import { HeadingCardItem } from './Heading'
 import { CardItemContainer, CardItemContent, Infos, Tags } from './styles'
@@ -59,11 +60,7 @@ export function CardItem(props: CardItemProps) {
 
           <Infos>
             {hasDescription && (
-              <div>
-                {description.map((paragraph, index) => (
-                  <p key={paragraph + index}>{paragraph}</p>
-                ))}
-              </div>
+              <DescriptionCardItem description={description} />
             )}
 
             {hasAdditionalLinks && (
