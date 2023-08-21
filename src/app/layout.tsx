@@ -1,6 +1,7 @@
 import '../styles/panda.css'
 
 import { Analytics } from '@vercel/analytics/react'
+import { ReactNode } from 'react'
 import { seoConfig } from 'seo.config'
 
 import { Cursor } from '@/components/(cursor)/Cursor'
@@ -10,7 +11,7 @@ import { fontClassName } from '@/styles/fonts'
 import { BodyContent } from './styles'
 
 type RootLayoutProps = {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export const metadata = seoConfig

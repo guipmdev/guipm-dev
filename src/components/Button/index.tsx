@@ -1,16 +1,17 @@
-import { ComponentPropsWithRef, forwardRef } from 'react'
+import { ComponentPropsWithRef, forwardRef, ReactNode } from 'react'
 
 import { ButtonContainer } from './styles'
 
 interface ButtonProps extends ComponentPropsWithRef<'button'> {
-  text: string
+  children: ReactNode
+  rotateIcon?: boolean
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  function Button({ text, ...rest }, ref) {
+  function Button({ children, rotateIcon, ...rest }, ref) {
     return (
-      <ButtonContainer ref={ref} {...rest}>
-        {text}
+      <ButtonContainer ref={ref} rotateIcon={rotateIcon} {...rest}>
+        {children}
       </ButtonContainer>
     )
   },

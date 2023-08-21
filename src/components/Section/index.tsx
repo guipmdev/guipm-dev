@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithoutRef } from 'react'
+import { ComponentPropsWithoutRef, ReactNode } from 'react'
 import { RxArrowRight } from 'react-icons/rx'
 
 import { CustomLink, SectionContainer } from './styles'
@@ -11,7 +11,7 @@ interface SectionProps extends ComponentPropsWithoutRef<'section'> {
     text: string
     url: string
   }
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export function Section({

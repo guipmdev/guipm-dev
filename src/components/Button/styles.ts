@@ -4,13 +4,17 @@ export const ButtonContainer = styled('button', {
   base: {
     position: 'relative',
 
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.25rem',
+
     padding: '0.5rem',
     border: '1px solid white',
     borderColor: 'title',
     borderRadius: '6px',
     margin: '0 auto',
 
-    textStyle: 'md',
+    textStyle: 'xs',
     textTransform: 'uppercase',
     color: 'title',
 
@@ -24,6 +28,19 @@ export const ButtonContainer = styled('button', {
       borderColor: 'title',
 
       color: 'background',
+    },
+
+    '& svg': {
+      transition: 'transform 0.5s',
+    },
+  },
+  variants: {
+    rotateIcon: {
+      true: {
+        '& svg': {
+          transform: 'rotate(180deg)',
+        },
+      },
     },
   },
 })

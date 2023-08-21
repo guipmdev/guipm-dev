@@ -1,5 +1,6 @@
 import { FaYoutube } from 'react-icons/fa6'
 import {
+  RxChevronDown,
   RxEnvelopeClosed,
   RxFigmaLogo,
   RxGithubLogo,
@@ -14,6 +15,7 @@ export const icons = {
   github: RxGithubLogo,
   link: RxLink1,
   linkedin: RxLinkedinLogo,
+  arrowDown: RxChevronDown,
 
   // ===== Font Awesome =====
   youtube: FaYoutube,

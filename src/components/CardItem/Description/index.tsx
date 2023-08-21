@@ -1,9 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { IconType } from 'react-icons'
 import { useIsMounted } from 'usehooks-ts'
 
 import { Button } from '@/components/Button'
+import { icons } from '@/libs/reactIcons'
 import { css } from '@/styled-system/css'
 
 import { ParagraphCardItemContainer } from './styles'
@@ -57,6 +59,8 @@ export function DescriptionCardItem({ description }: DescriptionCardItemProps) {
     }
   }
 
+  const ArrowDownIcon: IconType = icons.arrowDown
+
   useEffect(() => {
     if (divRef?.current) {
       divRef.current.className = css({
@@ -87,9 +91,12 @@ export function DescriptionCardItem({ description }: DescriptionCardItemProps) {
         <Button
           onClick={handleToggleDescription}
           ref={buttonRef}
+          rotateIcon={isExpanded}
           style={{ marginTop: defaultButtonMarginTop }}
-          text={isExpanded ? 'Ocultar' : 'Expandir'}
-        />
+        >
+          {isExpanded ? 'Ocultar' : 'Expandir'}
+          <ArrowDownIcon size={12} />
+        </Button>
       )}
     </ParagraphCardItemContainer>
   )
