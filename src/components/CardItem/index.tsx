@@ -45,10 +45,14 @@ export function CardItem(props: CardItemProps) {
           <HeadingCardItem {...props}>
             {hasLink ? (
               <Link href={link} target="_blank" rel="noopener noreferrer">
-                {headingTitle}
+                <span>
+                  {headingTitle}
 
-                <span className="icon">
-                  <RxExternalLink size={9} />
+                  <span className="icon">
+                    <div>
+                      <RxExternalLink size={9} />
+                    </div>
+                  </span>
                 </span>
 
                 <span className="hoverable"></span>

@@ -13,22 +13,31 @@ export const HeadingCardItemContainer = styled('h2', {
       transition: 'color 0.2s',
 
       '& span.icon': {
-        position: 'relative',
-
-        display: 'flex',
-        alignItems: 'center',
+        display: 'inline-block',
 
         width: '0.75rem',
         height: '0.75rem',
 
-        '& svg': {
-          position: 'absolute',
+        '& div': {
+          position: 'relative',
 
-          transition: 'transform 0.2s',
+          width: '100%',
+          height: '100%',
+
+          display: 'flex',
+          alignItems: 'center',
+
+          marginLeft: '0.25rem',
+
+          '& svg': {
+            position: 'absolute',
+
+            transition: 'transform 0.2s',
+          },
         },
       },
 
-      '& span:not(.icon)': {
+      '& > span:last-of-type': {
         display: 'none',
 
         lg: {
