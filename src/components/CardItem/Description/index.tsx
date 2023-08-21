@@ -48,6 +48,10 @@ export function DescriptionCardItem({ description }: DescriptionCardItemProps) {
       divRef.current.style.maskPosition = isExpanded
         ? defaultDivMaskPosition
         : 'center 0%'
+      divRef.current.style.setProperty(
+        '-webkit-mask-position',
+        isExpanded ? defaultDivMaskPosition : 'center 0%',
+      )
 
       setIsExpanded(!isExpanded)
     }
@@ -65,11 +69,18 @@ export function DescriptionCardItem({ description }: DescriptionCardItemProps) {
     if (divRef?.current) {
       divRef.current.className = css({
         maskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)',
+        WebkitMaskImage:
+          'linear-gradient(to bottom, black 50%, transparent 100%)',
         maskSize: 'auto 200%',
+        WebkitMaskSize: 'auto 200%',
       })
 
       divRef.current.style.maxHeight = defaultDivMaxHeight
       divRef.current.style.maskPosition = defaultDivMaskPosition
+      divRef.current.style.setProperty(
+        '-webkit-mask-position',
+        defaultDivMaskPosition,
+      )
 
       setHasOverflow(divRef.current.scrollHeight > divRef.current.clientHeight)
     }
