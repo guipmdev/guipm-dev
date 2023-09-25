@@ -77,6 +77,7 @@
   </summary>
 
 - [📍 Overview](#-overview)
+  - [⚠️ Disclaimer](#️-disclaimer)
 - [✨ Features](#-features)
 - [🤖 Demo](#-demo)
 - [🎨 Layout](#-layout)
@@ -96,9 +97,27 @@
 
 ## 📍 Overview
 
-This project is a web application developed in _Next.js_ and _TypeScript_ for a ...
+This project is a web application developed in _Next.js_ and _TypeScript_ for my personal portfolio site. It includes the About, Experience and Project sections, as well as a customized cursor to provide an interactive user experience.
+
+The project connects to an API to fetch the data used on the website, and uses CSS-in-JS to style its components. Overall, it's a visually appealing and interactive platform that showcases the work and experience of its developer.
+
+### ⚠️ Disclaimer
+
+The back-end of this website is built with JSON Server and is not included in this repository. **To test this application on your machine, you'll need to clone both repositories (front and back)**, make the respective configurations and run the scripts, but everything is in detail in the [⚙️ Usage](#️-usage) section!
 
 ## ✨ Features
+
+🖱️ **Custom cursor** for a more immersive experience
+
+⚡ **Focus on loading speed**
+
+📱 Made in **mobile first**, meaning great viewing on mobile devices
+
+🌑 **Dark mode always**, to keep your eyes safe
+
+⚙ **Built with SSR**, so even without JavaScript all the information still remains visible
+
+👍 Made with **accessibility and SEO** in mind
 
 ## 🤖 Demo
 
@@ -257,10 +276,10 @@ Before you begin, ensure that you have the following tools installed on your mac
 
 ### 📦 Installation
 
-1. Clone the backend repository:
+1. Clone the [backend repository](https://github.com/guipmdev/guipm-dev-json-server/):
 
 ```sh
-git clone github.com/guipmdev/guipm-dev-json-server/
+git clone https://github.com/guipmdev/guipm-dev-json-server/
 ```
 
 2. Change to the backend directory:
@@ -342,7 +361,9 @@ This project is licensed under the terms of the `MIT` license. See the
 
 ## 👏 Acknowledgments
 
-> - Many thanks to [Rocketseat](https://www.rocketseat.com.br/) for the layout and tips when putting this project together
+> - Many thanks to [Rocketseat](https://www.rocketseat.com.br/) for the tips I've received so far
+> - Credits to the dev [Brittany Chiang](https://brittanychiang.com/) for the site-resume style
+> - Credits to the dev [Adenekan Wonderful](https://www.codewonders.dev/) for the cursor style and application background
 
 <!-- ===== FOOTER ===== -->
 

@@ -77,6 +77,7 @@
   </summary>
 
 - [📍 Visão geral](#-visão-geral)
+  - [⚠️ Aviso](#️-aviso)
 - [✨ Funcionalidades](#-funcionalidades)
 - [🤖 Demo](#-demo)
 - [🎨 Layout](#-layout)
@@ -96,9 +97,27 @@
 
 ## 📍 Visão geral
 
-Este projeto é uma aplicação web desenvolvida em _Next.js_ e _TypeScript_ de ...
+Esse projeto é uma aplicação web desenvolvida em _Next.js_ e _TypeScript_ para o meu site de portfólio pessoal. Ele inclui as seções Sobre, Experiência, Projeto, além de um Cursor personalizado para proporcionar uma experiência interativa ao usuário.
+
+O projeto se conecta com uma API para buscar os dados usados no website, e usa CSS-in-JS para estilizar os seus componentes. No geral, é uma plataforma visualmente atraente e interativa que mostra o trabalho e a experiência do seu desenvolvedor.
+
+### ⚠️ Aviso
+
+O back-end desse website foi desenvolvido em JSON Server e não está incluso nesse repositório. **Para testar essa aplicação na sua máquina, você precisará clonar ambos os repositórios (front e back)**, fazer as respectivas configurações e executar os scripts, mas tudo está em detalhes na seção de [⚙️ Utilização](#️-utilização)!
 
 ## ✨ Funcionalidades
+
+🖱️ **Cursor personalizado** para uma experiência mais imersiva
+
+⚡ **Foco na velocidade** de carregamento
+
+📱 Feito em **mobile first**, ou seja, ótima visualização em dispositivos móveis
+
+🌑 **Dark mode sempre**, para ficar com os olhos tranquilos
+
+⚙ **Construído com SSR**, então mesmo sem JavaScript todas as informações ficam visíveis
+
+👍 Feito pensando em **acessibilidade e SEO**
 
 ## 🤖 Demo
 
@@ -257,10 +276,10 @@ Antes de você começar, certifique-se que você tem as seguintes ferramentas in
 
 ### 📦 Instalação
 
-1. Clone o repositório do backend:
+1. Clone o [repositório do backend](https://github.com/guipmdev/guipm-dev-json-server/):
 
 ```sh
-git clone github.com/guipmdev/guipm-dev-json-server/
+git clone https://github.com/guipmdev/guipm-dev-json-server/
 ```
 
 2. Mude para o diretório do backend:
@@ -341,7 +360,9 @@ Este projeto está licenciado de acordo com os termos da licença `MIT`. Consult
 
 ## 👏 Reconhecimentos
 
-> - Muito obrigado à [Rocketseat](https://www.rocketseat.com.br/) pelo layout e pelas dicas de como montar este projeto
+> - Muito obrigado à [Rocketseat](https://www.rocketseat.com.br/) pelas dicas que recebi até aqui
+> - Créditos à dev [Brittany Chiang](https://brittanychiang.com/) pelo estilo de site-currículo
+> - Créditos ao dev [Adenekan Wonderful](https://www.codewonders.dev/) pelo estilo de cursor e background da aplicação
 
 <!-- ===== FOOTER ===== -->
 
