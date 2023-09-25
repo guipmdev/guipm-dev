@@ -1,6 +1,6 @@
 {
   "name": "guipm-dev",
-  "description": "",
+  "description": "Interactive personal portfolio site with custom cursor and focus on user experience",
   "private": true,
   "scripts": {
     "prepare": "panda codegen",
