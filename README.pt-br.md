@@ -218,7 +218,7 @@ As seguintes ferramentas foram usadas para desenvolver esse projeto:
 
 _\* Confira o arquivo [<kbd>package.json</kbd>](./package.json)_
 
-### Server
+### Servidor
 
 <p>
   <a href="https://github.com/typicode/json-server">
