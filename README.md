@@ -55,9 +55,9 @@
       alt="Project license"
     />
   </a>
-  <a href="https://www.rocketseat.com.br/" title="Go to the Rocketseat website">
+  <a href="https://guipm.dev/" title="Go to the guipm.dev website">
     <img
-      src="https://img.shields.io/badge/Layout_by-Rocketseat-8257e5?labelColor=202024"
+      src="https://img.shields.io/badge/Layout_by-guipm.dev-005D85?labelColor=071d2a"
       alt="Layout designer"
     />
   </a>
