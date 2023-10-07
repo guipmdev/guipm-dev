@@ -125,7 +125,7 @@ https://github.com/guipmdev/guipm-dev/assets/136738335/135996b2-4aa8-41fc-9aa8-9
 
 ## 🎨 Layout
 
-The layout of the application was designed by **me** and is available on [Figma](https://www.figma.com/file/HjCbKGCHj9xffchp1dNpy0/Personal-website).
+The layout of the application was designed by **guipm.dev** and is available on [Figma](https://www.figma.com/file/HjCbKGCHj9xffchp1dNpy0/Personal-website).
 
 <p align="center">
   <img
