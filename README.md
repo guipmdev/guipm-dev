@@ -103,7 +103,7 @@ The project connects to an API to fetch the data used on the website, and uses C
 
 ### ⚠️ Disclaimer
 
-The back-end of this website is built with JSON Server and is not included in this repository. **To test this application on your machine, you'll need to clone both repositories (front and back)**, make the respective configurations and run the scripts, but everything is in detail in the [⚙️ Usage](#️-usage) section!
+The back-end of this website is built with _JSON Server_ and is not included in this repository. **To test this application on your machine, you'll need to clone both repositories (front and back)**, make the respective configurations and run the scripts, but everything is in detail in the [⚙️ Usage](#️-usage) section!
 
 ## ✨ Features
 
