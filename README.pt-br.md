@@ -103,7 +103,7 @@ O projeto se conecta com uma API para buscar os dados usados no website, e usa C
 
 ### ⚠️ Aviso
 
-O back-end desse website foi desenvolvido em JSON Server e não está incluso nesse repositório. **Para testar essa aplicação na sua máquina, você precisará clonar ambos os repositórios (front e back)**, fazer as respectivas configurações e executar os scripts, mas tudo está em detalhes na seção de [⚙️ Utilização](#️-utilização)!
+O back-end desse website foi desenvolvido em _JSON Server_ e não está incluso nesse repositório. **Para testar essa aplicação na sua máquina, você precisará clonar ambos os repositórios (front e back)**, fazer as respectivas configurações e executar os scripts, mas tudo está em detalhes na seção de [⚙️ Utilização](#️-utilização)!
 
 ## ✨ Funcionalidades
 
