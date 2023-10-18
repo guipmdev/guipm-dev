@@ -278,7 +278,7 @@ Antes de você começar, certifique-se que você tem as seguintes ferramentas in
 
 ### 📦 Instalação
 
-1. Clone o [repositório do backend](https://github.com/guipmdev/guipm-dev-json-server/):
+1. Clone o [repositório do back end](https://github.com/guipmdev/guipm-dev-json-server/):
 
 ```sh
 git clone https://github.com/guipmdev/guipm-dev-json-server/
@@ -318,7 +318,7 @@ npm install
 
 ### ⚙️ Utilização
 
-1. Entre no diretório do backend:
+1. Entre no diretório do back end:
 
 ```sh
 cd guipm-dev-json-server
