@@ -14,7 +14,7 @@
 
 <p align="center">
   <a
-    href="https://guipmdev.dev/"
+    href="https://guipm.dev/"
     title="Acessar a aplicação web"
   >
     <img
@@ -66,7 +66,7 @@
 ![Captura de tela da página inicial da aplicação](./src/assets/images/cover.webp)
 
 <p align="center">
-  <a href="https://guipmdev.dev/"
+  <a href="https://guipm.dev/"
     >Acessar a aplicação web ↗</a
   >
 </p>
