@@ -284,7 +284,7 @@ Antes de você começar, certifique-se que você tem as seguintes ferramentas in
 git clone https://github.com/guipmdev/guipm-dev-json-server/
 ```
 
-2. Mude para o diretório do backend:
+2. Mude para o diretório do back end:
 
 ```sh
 cd guipm-dev-json-server
