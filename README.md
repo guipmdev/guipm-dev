@@ -284,7 +284,7 @@ Before you begin, ensure that you have the following tools installed on your mac
 git clone https://github.com/guipmdev/guipm-dev-json-server/
 ```
 
-2. Change to the backend directory:
+2. Change to the back end directory:
 
 ```sh
 cd guipm-dev-json-server
