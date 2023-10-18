@@ -278,7 +278,7 @@ Before you begin, ensure that you have the following tools installed on your mac
 
 ### 📦 Installation
 
-1. Clone the [backend repository](https://github.com/guipmdev/guipm-dev-json-server/):
+1. Clone the [back end repository](https://github.com/guipmdev/guipm-dev-json-server/):
 
 ```sh
 git clone https://github.com/guipmdev/guipm-dev-json-server/
@@ -318,7 +318,7 @@ npm install
 
 ### ⚙️ Usage
 
-1. Enter the backend directory:
+1. Enter the back end directory:
 
 ```sh
 cd guipm-dev-json-server
