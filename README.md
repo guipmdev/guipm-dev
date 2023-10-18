@@ -57,7 +57,7 @@
   </a>
   <a href="https://guipm.dev/" title="Go to the guipm.dev website">
     <img
-      src="https://img.shields.io/badge/Layout_by-guipm.dev-005D85?labelColor=071d2a"
+      src="https://img.shields.io/badge/Layout_by-guipm.dev-005D85?labelColor=202024"
       alt="Layout designer"
     />
   </a>
