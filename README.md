@@ -66,7 +66,7 @@
 ![Screenshot of the application initial page](./src/assets/images/cover.webp)
 
 <p align="center">
-  <a href="https://guipmdev.dev/"
+  <a href="https://guipm.dev/"
     >Go to the web application ↗</a
   >
 </p>
