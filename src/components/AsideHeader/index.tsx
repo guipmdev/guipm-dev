@@ -39,7 +39,7 @@ export async function AsideHeader() {
           <div>
             <h1>GUIPM.DEV</h1>
             <strong>
-              <span>&lt;</span>Fullstack developer <span>/&gt;</span>
+              <span>&lt;</span>Full-stack developer <span>/&gt;</span>
             </strong>
           </div>
         </div>

@@ -5,11 +5,9 @@ const defineMetadata = <T extends Metadata>(metadata: T) => metadata
 export const seoConfig = defineMetadata({
   title: {
     template: '%s - guipm.dev',
-    default:
-      'guipm.dev - Desenvolvedor Full Stack | React.js | Node.js | TypeScript | PostgreSQL | Next.js',
+    default: 'guipm.dev - Full-stack | React/Next.js | Node.js',
   },
-  description:
-    'Desenvolvedor Full Stack | React.js | Node.js | TypeScript | PostgreSQL | Next.js',
+  description: 'Full-stack | React/Next.js | Node.js',
   manifest: '/site.webmanifest',
   icons: [
     { rel: 'icon', url: '/favicon.ico' },
