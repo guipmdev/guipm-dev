@@ -55,9 +55,9 @@
       alt="Project license"
     />
   </a>
-  <a href="https://www.rocketseat.com.br/" title="Go to the Rocketseat website">
+  <a href="https://guipm.dev/" title="Go to the guipm.dev website">
     <img
-      src="https://img.shields.io/badge/Layout_by-Rocketseat-8257e5?labelColor=202024"
+      src="https://img.shields.io/badge/Layout_by-guipm.dev-005D85?labelColor=202024"
       alt="Layout designer"
     />
   </a>
@@ -66,7 +66,7 @@
 ![Screenshot of the application initial page](./src/assets/images/cover.webp)
 
 <p align="center">
-  <a href="https://guipmdev.dev/"
+  <a href="https://guipm.dev/"
     >Go to the web application ↗</a
   >
 </p>
@@ -103,7 +103,7 @@ The project connects to an API to fetch the data used on the website, and uses C
 
 ### ⚠️ Disclaimer
 
-The back-end of this website is built with JSON Server and is not included in this repository. **To test this application on your machine, you'll need to clone both repositories (front and back)**, make the respective configurations and run the scripts, but everything is in detail in the [⚙️ Usage](#️-usage) section!
+The back-end of this website is built with _JSON Server_ and is not included in this repository. **To test this application on your machine, you'll need to clone both repositories (front and back)**, make the respective configurations and run the scripts, but everything is in detail in the [⚙️ Usage](#️-usage) section!
 
 ## ✨ Features
 
@@ -125,7 +125,7 @@ https://github.com/guipmdev/guipm-dev/assets/136738335/135996b2-4aa8-41fc-9aa8-9
 
 ## 🎨 Layout
 
-The layout of the application was designed by **me** and is available on [Figma](https://www.figma.com/file/HjCbKGCHj9xffchp1dNpy0/Personal-website).
+The layout of the application was designed by **guipm.dev** and is available on [Figma](https://www.figma.com/file/HjCbKGCHj9xffchp1dNpy0/Personal-website).
 
 <p align="center">
   <img
@@ -278,13 +278,13 @@ Before you begin, ensure that you have the following tools installed on your mac
 
 ### 📦 Installation
 
-1. Clone the [backend repository](https://github.com/guipmdev/guipm-dev-json-server/):
+1. Clone the [back end repository](https://github.com/guipmdev/guipm-dev-json-server/):
 
 ```sh
 git clone https://github.com/guipmdev/guipm-dev-json-server/
 ```
 
-2. Change to the backend directory:
+2. Change to the back end directory:
 
 ```sh
 cd guipm-dev-json-server
@@ -318,7 +318,7 @@ npm install
 
 ### ⚙️ Usage
 
-1. Enter the backend directory:
+1. Enter the back end directory:
 
 ```sh
 cd guipm-dev-json-server

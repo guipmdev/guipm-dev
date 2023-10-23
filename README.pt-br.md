@@ -14,7 +14,7 @@
 
 <p align="center">
   <a
-    href="https://guipmdev.dev/"
+    href="https://guipm.dev/"
     title="Acessar a aplicação web"
   >
     <img
@@ -55,9 +55,9 @@
       alt="Licença do projeto"
     />
   </a>
-  <a href="https://www.rocketseat.com.br/" title="Acessar o site da Rocketseat">
+  <a href="https://guipm.dev/" title="Acessar o site do guipm.dev">
     <img
-      src="https://img.shields.io/badge/Layout_por-Rocketseat-8257e5?labelColor=202024"
+      src="https://img.shields.io/badge/Layout_by-guipm.dev-005D85?labelColor=202024"
       alt="Designer do layout"
     />
   </a>
@@ -66,7 +66,7 @@
 ![Captura de tela da página inicial da aplicação](./src/assets/images/cover.webp)
 
 <p align="center">
-  <a href="https://guipmdev.dev/"
+  <a href="https://guipm.dev/"
     >Acessar a aplicação web ↗</a
   >
 </p>
@@ -103,7 +103,7 @@ O projeto se conecta com uma API para buscar os dados usados no website, e usa C
 
 ### ⚠️ Aviso
 
-O back-end desse website foi desenvolvido em JSON Server e não está incluso nesse repositório. **Para testar essa aplicação na sua máquina, você precisará clonar ambos os repositórios (front e back)**, fazer as respectivas configurações e executar os scripts, mas tudo está em detalhes na seção de [⚙️ Utilização](#️-utilização)!
+O back-end desse website foi desenvolvido em _JSON Server_ e não está incluso nesse repositório. **Para testar essa aplicação na sua máquina, você precisará clonar ambos os repositórios (front e back)**, fazer as respectivas configurações e executar os scripts, mas tudo está em detalhes na seção de [⚙️ Utilização](#️-utilização)!
 
 ## ✨ Funcionalidades
 
@@ -125,7 +125,7 @@ https://github.com/guipmdev/guipm-dev/assets/136738335/135996b2-4aa8-41fc-9aa8-9
 
 ## 🎨 Layout
 
-O layout da aplicação foi projetado pela **Rocketseat** e está disponível no [Figma](https://www.figma.com/file/HjCbKGCHj9xffchp1dNpy0/Personal-website).
+O layout da aplicação foi projetado por **guipm.dev** e está disponível no [Figma](https://www.figma.com/file/HjCbKGCHj9xffchp1dNpy0/Personal-website).
 
 <p align="center">
   <img
@@ -218,7 +218,7 @@ As seguintes ferramentas foram usadas para desenvolver esse projeto:
 
 _\* Confira o arquivo [<kbd>package.json</kbd>](./package.json)_
 
-### Server
+### Servidor
 
 <p>
   <a href="https://github.com/typicode/json-server">
@@ -278,13 +278,13 @@ Antes de você começar, certifique-se que você tem as seguintes ferramentas in
 
 ### 📦 Instalação
 
-1. Clone o [repositório do backend](https://github.com/guipmdev/guipm-dev-json-server/):
+1. Clone o [repositório do back end](https://github.com/guipmdev/guipm-dev-json-server/):
 
 ```sh
 git clone https://github.com/guipmdev/guipm-dev-json-server/
 ```
 
-2. Mude para o diretório do backend:
+2. Mude para o diretório do back end:
 
 ```sh
 cd guipm-dev-json-server
@@ -318,7 +318,7 @@ npm install
 
 ### ⚙️ Utilização
 
-1. Entre no diretório do backend:
+1. Entre no diretório do back end:
 
 ```sh
 cd guipm-dev-json-server
